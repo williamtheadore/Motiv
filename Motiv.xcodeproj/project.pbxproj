@@ -52,7 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				868FFB69281736030081D07C /* MotivApp.swift */,
-				868FFB6B281736030081D07C /* ContentView.swift */,
+				868FFB77281737A70081D07C /* View */,
+				868FFB78281737B80081D07C /* View Model */,
+				868FFB79281737C00081D07C /* Model */,
 				868FFB6D281736070081D07C /* Assets.xcassets */,
 				868FFB6F281736070081D07C /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				868FFB70281736070081D07C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		868FFB77281737A70081D07C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				868FFB6B281736030081D07C /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		868FFB78281737B80081D07C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		868FFB79281737C00081D07C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
