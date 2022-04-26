@@ -23,6 +23,12 @@
 		8671CE7D281782A00068DE4A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE7C281782A00068DE4A /* FirebaseMessaging */; };
 		8671CE7F281782A00068DE4A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE7E281782A00068DE4A /* FirebaseStorage */; };
 		8671CE81281782A00068DE4A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE80281782A00068DE4A /* FirebaseStorageCombine-Community */; };
+		8671CE83281783630068DE4A /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE82281783630068DE4A /* GoogleButton.swift */; };
+		8671CE8728178A510068DE4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8671CE8628178A510068DE4A /* GoogleService-Info.plist */; };
+		8671CE8B281836A40068DE4A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8A281836A40068DE4A /* LoginScreen.swift */; };
+		8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8C281837E30068DE4A /* GenericTextField.swift */; };
+		8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8E28183CDD0068DE4A /* NavBackButton.swift */; };
+		8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE91281848020068DE4A /* GenericSecureField.swift */; };
 		868FFB6A281736030081D07C /* MotivApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB69281736030081D07C /* MotivApp.swift */; };
 		868FFB6C281736030081D07C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB6B281736030081D07C /* RootView.swift */; };
 		868FFB6E281736070081D07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868FFB6D281736070081D07C /* Assets.xcassets */; };
@@ -35,6 +41,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8671CE82281783630068DE4A /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
+		8671CE8628178A510068DE4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8671CE8A281836A40068DE4A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		8671CE8C281837E30068DE4A /* GenericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextField.swift; sourceTree = "<group>"; };
+		8671CE8E28183CDD0068DE4A /* NavBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBackButton.swift; sourceTree = "<group>"; };
+		8671CE91281848020068DE4A /* GenericSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSecureField.swift; sourceTree = "<group>"; };
 		868FFB66281736030081D07C /* Motiv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motiv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868FFB69281736030081D07C /* MotivApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivApp.swift; sourceTree = "<group>"; };
 		868FFB6B281736030081D07C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -74,9 +86,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8671CE88281836810068DE4A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8671CE8A281836A40068DE4A /* LoginScreen.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8671CE89281836870068DE4A /* User Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "User Signup";
+			sourceTree = "<group>";
+		};
+		8671CE9028183CEA0068DE4A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8671CE8C281837E30068DE4A /* GenericTextField.swift */,
+				8671CE8E28183CDD0068DE4A /* NavBackButton.swift */,
+				8671CE91281848020068DE4A /* GenericSecureField.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		868FFB5D281736030081D07C = {
 			isa = PBXGroup;
 			children = (
+				8671CE8628178A510068DE4A /* GoogleService-Info.plist */,
 				868FFB68281736030081D07C /* Motiv */,
 				868FFB67281736030081D07C /* Products */,
 			);
@@ -115,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				868FFB6B281736030081D07C /* RootView.swift */,
+				8671CE9028183CEA0068DE4A /* General */,
 				868FFB7A28173B110081D07C /* Onboarding */,
 			);
 			path = View;
@@ -138,6 +177,8 @@
 		868FFB7A28173B110081D07C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8671CE89281836870068DE4A /* User Signup */,
+				8671CE88281836810068DE4A /* Login */,
 				868FFB7B28173B1A0081D07C /* Initial Three */,
 			);
 			path = Onboarding;
@@ -158,6 +199,7 @@
 				868FFB7F28173B790081D07C /* CircleLogoView.swift */,
 				868FFB8328174AF30081D07C /* CapsuleTabs.swift */,
 				868FFB81281744410081D07C /* OnboardingButton.swift */,
+				8671CE82281783630068DE4A /* GoogleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				868FFB71281736070081D07C /* Preview Assets.xcassets in Resources */,
+				8671CE8728178A510068DE4A /* GoogleService-Info.plist in Resources */,
 				868FFB6E281736070081D07C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,10 +298,15 @@
 			files = (
 				868FFB82281744410081D07C /* OnboardingButton.swift in Sources */,
 				868FFB7E28173B670081D07C /* MainScreen.swift in Sources */,
+				8671CE8B281836A40068DE4A /* LoginScreen.swift in Sources */,
+				8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */,
 				868FFB8028173B790081D07C /* CircleLogoView.swift in Sources */,
 				868FFB8428174AF30081D07C /* CapsuleTabs.swift in Sources */,
+				8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
+				8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
+				8671CE83281783630068DE4A /* GoogleButton.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

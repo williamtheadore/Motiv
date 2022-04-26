@@ -14,58 +14,93 @@ struct MainScreen: View {
     // MARK: Landing page
     var body: some View {
         
-        VStack {
-
-            Group {
-                
-                // MARK: Fixed Logo View
-                CircleLogoView()
-                
-                // MARK: Animated Capsule View
-                CapsuleTabs(selectedTab: onboardingVM.tabSelection)
-                    .padding()
-                
-                // MARK: Title view
-                Text(onboardingVM.titles[onboardingVM.tabSelection])
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .font(.title)
-                
-                // MARK: Caption view
-                Text(onboardingVM.captions[onboardingVM.tabSelection])
-                    .foregroundColor(Color("OnboardingCaption"))
-                    .padding(.vertical, -10)
-                    .font(.system(size: 16))
-            }
-            .offset(y: 160)
+        NavigationView {
             
-            // MARK: Bottom Button
-            if onboardingVM.tabSelection < 2 {
-                Button(action: {
-                    onboardingVM.incrementTab()
-                }, label: {
-                    if onboardingVM.tabSelection == 0 {
-                        OnboardingButton(buttonText: "Get Started")
-
-                    } else {
-                        OnboardingButton(buttonText: "Continue")
-                    }
-                })
-            } else {
+            VStack {
                 
-                VStack {
-                    Button(action: {
-                        onboardingVM.signupWithEmail()
-                    }, label: {
-                        OnboardingButton(buttonText: "Sign up with email")
-                    })
+                Group {
+                    
+                    // MARK: Fixed Logo View
+                    CircleLogoView()
+                    
+                    // MARK: Animated Capsule View
+                    CapsuleTabs(selectedTab: onboardingVM.tabSelection)
+                        .padding()
+                    
+                    // MARK: Title view
+                    Text(onboardingVM.titles[onboardingVM.tabSelection])
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.title)
+                    
+                    // MARK: Caption view
+                    Text(onboardingVM.captions[onboardingVM.tabSelection])
+                        .foregroundColor(Color("OnboardingCaption"))
+                        .padding(.vertical, -10)
+                        .font(.system(size: 16))
                 }
+                .offset(y: 160)
+                
+                // MARK: Sign up and continue buttons
+                VStack(spacing: 15) {
+                    
+                    if onboardingVM.tabSelection > 1 {
+                        Button(action: {
+                            Void()
+                        }, label: {
+                            GoogleButton()
+                        })
+                        
+                        HStack {
+                            Rectangle()
+                                .frame(width: UIScreen.main.bounds.maxX / 2 - 40, height: 1, alignment: .trailing)
+                                .foregroundColor(Color("OnboardingCaption"))
+                            Text("Or")
+                                .foregroundColor(.gray)
+                                .font(.footnote)
+                            Rectangle()
+                                .frame(width: UIScreen.main.bounds.maxX / 2 - 40, height: 1, alignment: .leading)
+                                .foregroundColor(Color("OnboardingCaption"))
+                        }
+                    }
+                    
+                    // MARK: Main Bottom Button with Switching Titles
+                    Button(action: {
+                        if onboardingVM.tabSelection < 2 {
+                            onboardingVM.incrementTab()
+                        } else {
+                            onboardingVM.signupWithEmail()
+                        }
+                    }, label: {
+                        OnboardingButton(buttonText: onboardingVM.buttonTitles[self.onboardingVM.tabSelection])
+                    })
+                    
+                    if onboardingVM.tabSelection > 1 {
+                        
+                        // MARK: Sign in button and text
+                        HStack {
+                            
+                            Text("Already have an account?")
+                                .font(.system(size: 15))
+                                .foregroundColor(.gray)
+                            
+                            NavigationLink(destination: {
+                                LoginScreen()
+                            }, label: {
+                                Text("Sign in")
+                                    .font(.system(size: 15))
+                                    .foregroundColor(Color("Blue"))
+                                    .fontWeight(.bold)
+                            })
+                        }
+                    }
+                }
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BG"))
         }
         .environmentObject(onboardingVM)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BG"))
     }
 }
 

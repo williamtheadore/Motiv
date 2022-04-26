@@ -10,6 +10,9 @@ import Foundation
 class OnboardingViewModel: ObservableObject {
     
     @Published var tabSelection: Int = 0
+    
+    @Published var loginEmail: String = ""
+    @Published var loginPassword: String = ""
 
     let titles = [
         "Welcome to Motiv",
@@ -23,6 +26,12 @@ class OnboardingViewModel: ObservableObject {
         "Streamlining the college event planning process"
     ]
     
+    let buttonTitles = [
+        "Get Started",
+        "Continue",
+        "Sign up with email"
+    ]
+    
     //
     func incrementTab() {
         tabSelection += 1
@@ -30,6 +39,11 @@ class OnboardingViewModel: ObservableObject {
     
     func signupWithEmail() {
         
+    }
+    
+    func login() {
+        print(self.loginEmail)
+        print(self.loginPassword)
     }
 
 }

@@ -14,7 +14,7 @@ struct OnboardingButton: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
-                .frame(width: UIScreen.main.bounds.maxX - 60, height: 55)
+                .frame(width: UIScreen.main.bounds.maxX - 70, height: 55)
                 .foregroundColor(Color("OnboardingButton"))
             
             // MARK: Text and Arrow
@@ -30,7 +30,7 @@ struct OnboardingButton: View {
                 
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
     }
 }
 
