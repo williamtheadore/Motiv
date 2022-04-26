@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScreenOne: View {
+struct MainScreen: View {
     
     @StateObject var onboardingVM = OnboardingViewModel()
     
@@ -17,25 +17,29 @@ struct ScreenOne: View {
         VStack {
 
             Group {
+                
+                // MARK: Fixed Logo View
                 CircleLogoView()
                 
-                CapsuleTabs()
+                // MARK: Animated Capsule View
+                CapsuleTabs(selectedTab: onboardingVM.tabSelection)
                     .padding()
                 
-                // Title view
-                Text("Welcome to Motiv")
+                // MARK: Title view
+                Text(onboardingVM.titles[onboardingVM.tabSelection])
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .font(.title)
                 
-                // Caption
-                Text("Never miss an event again. Join your friends\nand begin hosting and attending events now.")
+                // MARK: Caption view
+                Text(onboardingVM.captions[onboardingVM.tabSelection])
                     .foregroundColor(Color("OnboardingCaption"))
                     .padding(.vertical, -10)
+                    .font(.system(size: 16))
             }
-            .offset(y: 150)
+            .offset(y: 160)
             
-            // MARK: Bottom button
+            // MARK: Bottom Button
             if onboardingVM.tabSelection < 2 {
                 Button(action: {
                     onboardingVM.incrementTab()
@@ -65,8 +69,8 @@ struct ScreenOne: View {
     }
 }
 
-struct ScreenOne_Previews: PreviewProvider {
+struct MainScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ScreenOne()
+        MainScreen()
     }
 }

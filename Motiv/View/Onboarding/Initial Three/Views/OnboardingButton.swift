@@ -13,13 +13,16 @@ struct OnboardingButton: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 25)
-                .frame(width: UIScreen.main.bounds.maxX - 60, height: 60)
+            RoundedRectangle(cornerRadius: 30)
+                .frame(width: UIScreen.main.bounds.maxX - 60, height: 55)
                 .foregroundColor(Color("OnboardingButton"))
+            
+            // MARK: Text and Arrow
             HStack {
                 Text(buttonText)
                     .foregroundColor(.black)
                     .fontWeight(.semibold)
+                
                 Image(systemName: "chevron.right")
                     .resizable()
                     .foregroundColor(.black)

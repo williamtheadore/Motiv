@@ -11,7 +11,7 @@ import SwiftUI
 struct MotivApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
