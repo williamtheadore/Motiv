@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainScreen: View {
     
-    @StateObject var onboardingVM = OnboardingViewModel()
+    @EnvironmentObject var onboardingVM: OnboardingViewModel
     
     // MARK: Landing page
     var body: some View {
@@ -39,7 +39,7 @@ struct MainScreen: View {
                         .padding(.vertical, -10)
                         .font(.system(size: 16))
                 }
-                .offset(y: 160)
+                .offset(y: 130)
                 
                 // MARK: Sign up and continue buttons
                 VStack(spacing: 15) {
@@ -64,17 +64,20 @@ struct MainScreen: View {
                         }
                     }
                     
-                    // MARK: Main Bottom Button with Switching Titles
-                    Button(action: {
-                        if onboardingVM.tabSelection < 2 {
+                    // MARK: Main Bottom Button with Switching Titles and Navigation Link Upon End
+                    if onboardingVM.tabSelection < 2 {
+                        Button(action: {
                             onboardingVM.incrementTab()
-                        } else {
-                            onboardingVM.signupWithEmail()
-                        }
-                    }, label: {
-                        OnboardingButton(buttonText: onboardingVM.buttonTitles[self.onboardingVM.tabSelection])
-                    })
-                    
+                        }, label: {
+                            OnboardingButton(buttonText: onboardingVM.buttonTitles[self.onboardingVM.tabSelection])
+                        })
+                    } else {
+                        NavigationLink(destination: SignupWithEmailScreen(), label: {
+                            OnboardingButton(buttonText: onboardingVM.buttonTitles[self.onboardingVM.tabSelection])
+                        })
+                    }
+                
+
                     if onboardingVM.tabSelection > 1 {
                         
                         // MARK: Sign in button and text

@@ -29,6 +29,17 @@
 		8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8C281837E30068DE4A /* GenericTextField.swift */; };
 		8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8E28183CDD0068DE4A /* NavBackButton.swift */; };
 		8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE91281848020068DE4A /* GenericSecureField.swift */; };
+		8671CE94281856C40068DE4A /* SignupWithEmailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE93281856C40068DE4A /* SignupWithEmailScreen.swift */; };
+		8671CE96281856E00068DE4A /* SignupWithGoogleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE95281856E00068DE4A /* SignupWithGoogleScreen.swift */; };
+		8671CE98281859FF0068DE4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8671CE97281859FD0068DE4A /* LaunchScreen.storyboard */; };
+		8671CE9A281876150068DE4A /* ProgramDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE99281876140068DE4A /* ProgramDropDownMenu.swift */; };
+		8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */; };
+		8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2D82818EF1C001B4384 /* TitleView.swift */; };
+		8680E2E02818EF1C001B4384 /* ScrollingHStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */; };
+		8680E2E12818EF1C001B4384 /* WesternCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DB2818EF1C001B4384 /* WesternCardView.swift */; };
+		8680E2E22818EF1C001B4384 /* QueensCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DC2818EF1C001B4384 /* QueensCardView.swift */; };
+		8680E2E32818EF1C001B4384 /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DD2818EF1C001B4384 /* BottomCardView.swift */; };
+		8680E2E42818EF1C001B4384 /* SelectSchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DE2818EF1C001B4384 /* SelectSchoolView.swift */; };
 		868FFB6A281736030081D07C /* MotivApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB69281736030081D07C /* MotivApp.swift */; };
 		868FFB6C281736030081D07C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB6B281736030081D07C /* RootView.swift */; };
 		868FFB6E281736070081D07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868FFB6D281736070081D07C /* Assets.xcassets */; };
@@ -47,6 +58,17 @@
 		8671CE8C281837E30068DE4A /* GenericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextField.swift; sourceTree = "<group>"; };
 		8671CE8E28183CDD0068DE4A /* NavBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBackButton.swift; sourceTree = "<group>"; };
 		8671CE91281848020068DE4A /* GenericSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSecureField.swift; sourceTree = "<group>"; };
+		8671CE93281856C40068DE4A /* SignupWithEmailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithEmailScreen.swift; sourceTree = "<group>"; };
+		8671CE95281856E00068DE4A /* SignupWithGoogleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithGoogleScreen.swift; sourceTree = "<group>"; };
+		8671CE97281859FD0068DE4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8671CE99281876140068DE4A /* ProgramDropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDropDownMenu.swift; sourceTree = "<group>"; };
+		8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
+		8680E2D82818EF1C001B4384 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingHStackModifier.swift; sourceTree = "<group>"; };
+		8680E2DB2818EF1C001B4384 /* WesternCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WesternCardView.swift; sourceTree = "<group>"; };
+		8680E2DC2818EF1C001B4384 /* QueensCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensCardView.swift; sourceTree = "<group>"; };
+		8680E2DD2818EF1C001B4384 /* BottomCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
+		8680E2DE2818EF1C001B4384 /* SelectSchoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSchoolView.swift; sourceTree = "<group>"; };
 		868FFB66281736030081D07C /* Motiv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motiv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868FFB69281736030081D07C /* MotivApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivApp.swift; sourceTree = "<group>"; };
 		868FFB6B281736030081D07C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -97,6 +119,10 @@
 		8671CE89281836870068DE4A /* User Signup */ = {
 			isa = PBXGroup;
 			children = (
+				8680E2D72818EDE4001B4384 /* School Selection */,
+				8671CE93281856C40068DE4A /* SignupWithEmailScreen.swift */,
+				8671CE99281876140068DE4A /* ProgramDropDownMenu.swift */,
+				8671CE95281856E00068DE4A /* SignupWithGoogleScreen.swift */,
 			);
 			path = "User Signup";
 			sourceTree = "<group>";
@@ -104,11 +130,33 @@
 		8671CE9028183CEA0068DE4A /* General */ = {
 			isa = PBXGroup;
 			children = (
+				8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */,
 				8671CE8C281837E30068DE4A /* GenericTextField.swift */,
 				8671CE8E28183CDD0068DE4A /* NavBackButton.swift */,
 				8671CE91281848020068DE4A /* GenericSecureField.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		8680E2D72818EDE4001B4384 /* School Selection */ = {
+			isa = PBXGroup;
+			children = (
+				8680E2DA2818EF1C001B4384 /* Card Views */,
+				8680E2DD2818EF1C001B4384 /* BottomCardView.swift */,
+				8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */,
+				8680E2DE2818EF1C001B4384 /* SelectSchoolView.swift */,
+				8680E2D82818EF1C001B4384 /* TitleView.swift */,
+			);
+			path = "School Selection";
+			sourceTree = "<group>";
+		};
+		8680E2DA2818EF1C001B4384 /* Card Views */ = {
+			isa = PBXGroup;
+			children = (
+				8680E2DB2818EF1C001B4384 /* WesternCardView.swift */,
+				8680E2DC2818EF1C001B4384 /* QueensCardView.swift */,
+			);
+			path = "Card Views";
 			sourceTree = "<group>";
 		};
 		868FFB5D281736030081D07C = {
@@ -132,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				868FFB69281736030081D07C /* MotivApp.swift */,
+				8671CE97281859FD0068DE4A /* LaunchScreen.storyboard */,
 				868FFB77281737A70081D07C /* View */,
 				868FFB78281737B80081D07C /* View Model */,
 				868FFB79281737C00081D07C /* Model */,
@@ -284,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				868FFB71281736070081D07C /* Preview Assets.xcassets in Resources */,
+				8671CE98281859FF0068DE4A /* LaunchScreen.storyboard in Resources */,
 				8671CE8728178A510068DE4A /* GoogleService-Info.plist in Resources */,
 				868FFB6E281736070081D07C /* Assets.xcassets in Resources */,
 			);
@@ -297,16 +347,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				868FFB82281744410081D07C /* OnboardingButton.swift in Sources */,
+				8680E2E32818EF1C001B4384 /* BottomCardView.swift in Sources */,
 				868FFB7E28173B670081D07C /* MainScreen.swift in Sources */,
+				8671CE96281856E00068DE4A /* SignupWithGoogleScreen.swift in Sources */,
 				8671CE8B281836A40068DE4A /* LoginScreen.swift in Sources */,
 				8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */,
 				868FFB8028173B790081D07C /* CircleLogoView.swift in Sources */,
+				8671CE9A281876150068DE4A /* ProgramDropDownMenu.swift in Sources */,
+				8680E2E42818EF1C001B4384 /* SelectSchoolView.swift in Sources */,
 				868FFB8428174AF30081D07C /* CapsuleTabs.swift in Sources */,
 				8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
 				8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
+				8680E2E02818EF1C001B4384 /* ScrollingHStackModifier.swift in Sources */,
+				8680E2E22818EF1C001B4384 /* QueensCardView.swift in Sources */,
+				8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */,
+				8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */,
+				8671CE94281856C40068DE4A /* SignupWithEmailScreen.swift in Sources */,
 				8671CE83281783630068DE4A /* GoogleButton.swift in Sources */,
+				8680E2E12818EF1C001B4384 /* WesternCardView.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Motiv/Preview Content\"";
@@ -444,6 +505,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -464,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Motiv/Preview Content\"";
@@ -473,6 +536,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

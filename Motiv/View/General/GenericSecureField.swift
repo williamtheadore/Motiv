@@ -22,13 +22,13 @@ struct GenericSecureField: View {
             
             VStack(alignment: .leading) {
                 Text(text)
-                    .foregroundColor(Color("OnboardingCaption"))
+                    .foregroundColor(Color("ButtonTitle"))
                     .font(.footnote)
                     .padding(.vertical, -9)
-                SecureField("Enter Email", text: $input)
+                SecureField("", text: $input)
                     .foregroundColor(Color("LightBlue"))
             }
-            .padding(.horizontal, 40)
+            .padding(.horizontal, 50)
 
         }
     }

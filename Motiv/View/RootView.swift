@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct RootView: View {
+    
+    @StateObject var onboardingVM = OnboardingViewModel()
+    
     var body: some View {
         MainScreen()
+            .environmentObject(onboardingVM)
     }
 }
 
