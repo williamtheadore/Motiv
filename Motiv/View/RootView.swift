@@ -12,13 +12,18 @@ struct RootView: View {
     @StateObject var onboardingVM = OnboardingViewModel()
     
     var body: some View {
-        
-        if !onboardingVM.signedIn {
-            MainScreen()
-                .environmentObject(onboardingVM)
-        } else {
-            OptionScreen()
+        NavigationView {
+            ZStack {
+                if !onboardingVM.signedIn {
+                    MainScreen()
+                    
+                } else {
+                    OptionScreen()
+                }
+            }
         }
+        .environmentObject(onboardingVM)
+
     }
 }
 

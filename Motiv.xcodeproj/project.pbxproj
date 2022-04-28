@@ -52,6 +52,12 @@
 		86D220FD281A22E900AFC1A9 /* OptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D220FC281A22E900AFC1A9 /* OptionScreen.swift */; };
 		86D220FF281A22F200AFC1A9 /* OptionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D220FE281A22F200AFC1A9 /* OptionCardView.swift */; };
 		86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22100281A23A700AFC1A9 /* RootViewModel.swift */; };
+		86D22103281ADC3000AFC1A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22102281ADC3000AFC1A9 /* User.swift */; };
+		86D22105281ADCA700AFC1A9 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22104281ADCA700AFC1A9 /* School.swift */; };
+		86D22109281AE4A000AFC1A9 /* CreateHouseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22108281AE4A000AFC1A9 /* CreateHouseScreen.swift */; };
+		86D2210B281AE4A900AFC1A9 /* JoinHouseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2210A281AE4A900AFC1A9 /* JoinHouseScreen.swift */; };
+		86D2210D281AEC1B00AFC1A9 /* HouseDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2210C281AEC1B00AFC1A9 /* HouseDropDownMenu.swift */; };
+		86D2210F281AF9ED00AFC1A9 /* AddHousemates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2210E281AF9EA00AFC1A9 /* AddHousemates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +91,12 @@
 		86D220FC281A22E900AFC1A9 /* OptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScreen.swift; sourceTree = "<group>"; };
 		86D220FE281A22F200AFC1A9 /* OptionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCardView.swift; sourceTree = "<group>"; };
 		86D22100281A23A700AFC1A9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		86D22102281ADC3000AFC1A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		86D22104281ADCA700AFC1A9 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		86D22108281AE4A000AFC1A9 /* CreateHouseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHouseScreen.swift; sourceTree = "<group>"; };
+		86D2210A281AE4A900AFC1A9 /* JoinHouseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinHouseScreen.swift; sourceTree = "<group>"; };
+		86D2210C281AEC1B00AFC1A9 /* HouseDropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDropDownMenu.swift; sourceTree = "<group>"; };
+		86D2210E281AF9EA00AFC1A9 /* AddHousemates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHousemates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +239,8 @@
 		868FFB79281737C00081D07C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				86D22102281ADC3000AFC1A9 /* User.swift */,
+				86D22104281ADCA700AFC1A9 /* School.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,10 +278,30 @@
 		86D220FB281A22DA00AFC1A9 /* House Options */ = {
 			isa = PBXGroup;
 			children = (
+				86D22107281AE48E00AFC1A9 /* Join */,
+				86D22106281AE48300AFC1A9 /* Create */,
 				86D220FC281A22E900AFC1A9 /* OptionScreen.swift */,
 				86D220FE281A22F200AFC1A9 /* OptionCardView.swift */,
 			);
 			path = "House Options";
+			sourceTree = "<group>";
+		};
+		86D22106281AE48300AFC1A9 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				86D22108281AE4A000AFC1A9 /* CreateHouseScreen.swift */,
+				86D2210E281AF9EA00AFC1A9 /* AddHousemates.swift */,
+				86D2210C281AEC1B00AFC1A9 /* HouseDropDownMenu.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		86D22107281AE48E00AFC1A9 /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				86D2210A281AE4A900AFC1A9 /* JoinHouseScreen.swift */,
+			);
+			path = Join;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,22 +397,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D22103281ADC3000AFC1A9 /* User.swift in Sources */,
 				868FFB82281744410081D07C /* OnboardingButton.swift in Sources */,
 				8680E2E32818EF1C001B4384 /* BottomCardView.swift in Sources */,
 				868FFB7E28173B670081D07C /* MainScreen.swift in Sources */,
 				8671CE96281856E00068DE4A /* SignupWithGoogleScreen.swift in Sources */,
 				8671CE8B281836A40068DE4A /* LoginScreen.swift in Sources */,
+				86D2210D281AEC1B00AFC1A9 /* HouseDropDownMenu.swift in Sources */,
 				8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */,
 				868FFB8028173B790081D07C /* CircleLogoView.swift in Sources */,
+				86D2210B281AE4A900AFC1A9 /* JoinHouseScreen.swift in Sources */,
 				8671CE9A281876150068DE4A /* ProgramDropDownMenu.swift in Sources */,
 				8680E2E42818EF1C001B4384 /* SelectSchoolView.swift in Sources */,
 				868FFB8428174AF30081D07C /* CapsuleTabs.swift in Sources */,
 				8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
+				86D22105281ADCA700AFC1A9 /* School.swift in Sources */,
 				8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
 				8680E2E02818EF1C001B4384 /* ScrollingHStackModifier.swift in Sources */,
 				8680E2E22818EF1C001B4384 /* QueensCardView.swift in Sources */,
+				86D2210F281AF9ED00AFC1A9 /* AddHousemates.swift in Sources */,
+				86D22109281AE4A000AFC1A9 /* CreateHouseScreen.swift in Sources */,
 				8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */,
 				8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */,
 				8671CE94281856C40068DE4A /* SignupWithEmailScreen.swift in Sources */,

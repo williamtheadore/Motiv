@@ -90,6 +90,7 @@ struct SignupWithEmailScreen: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarHidden(true)
             .background(Color("BG"))
+            .environmentObject(onboardingVM)
         }
     }
 }

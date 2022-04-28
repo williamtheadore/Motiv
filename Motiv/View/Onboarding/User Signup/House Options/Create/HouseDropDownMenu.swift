@@ -1,13 +1,13 @@
 //
-//  ProgramDropDownMenu.swift
+//  HouseDropDownMenu.swift
 //  Motiv
 //
-//  Created by William Little on 2022-04-26.
+//  Created by William Little on 2022-04-28.
 //
 
 import SwiftUI
 
-struct ProgramDropDownMenu: View {
+struct HouseDropDownMenu: View {
     
     @State var expand = false
     
@@ -17,41 +17,41 @@ struct ProgramDropDownMenu: View {
         Animation.easeInOut
     }
     
-    func selectProgram(program: String) {
+    func selectStyle(style: String) {
         
-        self.onboardingVM.program = program
+        self.onboardingVM.houseStyle = style
         self.expand.toggle()
         
     }
     
     var body: some View {
         ZStack {
-            
+
             HStack {
                 VStack(alignment: .leading) {
                     
-                    Text("Program")
+                    Text("House Type")
                         .foregroundColor(Color("OnboardingCaption"))
                         .font(.footnote)
                         .padding(.vertical, expand ? 0 : -5)
-                        .offset(y: expand ? 5 : 363)
+                        .offset(y: expand ? 5 : 58)
 
                     
                     
                     
                     if !expand {
-                        Text(onboardingVM.program)
+                        Text(onboardingVM.houseStyle)
                             .foregroundColor(Color("LightBlue"))
                             .opacity(expand ? 0 : 1)
-                            .offset(y: 363)
+                            .offset(y: 58)
                     }
                     
-                    ForEach(onboardingVM.programs, id: \.self) { program in
+                    ForEach(onboardingVM.houseStyles, id: \.self) { style in
                         VStack {
                             Button(action: {
-                                selectProgram(program: program)
+                                selectStyle(style: style)
                             }, label: {
-                                Text(program)
+                                Text(style)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .foregroundColor(Color("LightBlue"))
                                     .padding(.vertical, 5)
@@ -79,14 +79,15 @@ struct ProgramDropDownMenu: View {
                 })
             }
         }
-        .frame(maxWidth: UIScreen.main.bounds.maxX - 60, maxHeight: expand ? UIScreen.main.bounds.maxY : 60)
+        .frame(maxWidth: UIScreen.main.bounds.maxX - 60, maxHeight: expand ? 160 : 60)
         .background(Color("DarkBlue").cornerRadius(5))
         .animation(animation)
+        .environmentObject(onboardingVM)
     }
 }
 
-struct ProgramDropDownMenu_Previews: PreviewProvider {
+struct HouseDropDownMenu_Previews: PreviewProvider {
     static var previews: some View {
-        ProgramDropDownMenu().environmentObject(OnboardingViewModel())
+        HouseDropDownMenu().environmentObject(OnboardingViewModel())
     }
 }

@@ -40,6 +40,11 @@ class OnboardingViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var reenterPassword: String = ""
     @Published var school: String = ""
+    
+    // MARK: Create House Variables
+    @Published var houseName: String = ""
+    @Published var houseStyle: String = "Select Type"
+    @Published var housemates: [String] = []
 
     let titles = [
         "Welcome to Motiv",
@@ -79,6 +84,12 @@ class OnboardingViewModel: ObservableObject {
         "Visual Arts",
         "Con-Ed",
         "Education"
+    ]
+    
+    let houseStyles: [String] = [
+        "House",
+        "Apartment",
+        "Unit"
     ]
     
     // MARK: Allows
@@ -139,6 +150,7 @@ class OnboardingViewModel: ObservableObject {
             "email" : self.email,
             "program" : self.program,
             "school" : self.school,
+            "friends" : [],
             "uid" : uid
         ])
         
@@ -194,5 +206,22 @@ class OnboardingViewModel: ObservableObject {
     func signout() {
         self.signedIn = false
     }
+    
+    // MARK: Test Users for Testing Purposes
+    let users: [User] = [
+        User(uid: UUID().uuidString, name: "John Doe", username: "jDoe", program: "Economics", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Dylan Brown", username: "Brown23", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Mike Reynolds", username: "Slydes123", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "William Little", username: "willskates", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Jason Bourne", username: "JBourne69", program: "Arts", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Tyler Dawn", username: "TDog", program: "Sociology", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Heet Kantaria", username: "Heet", program: "Economics", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Will", username: "bigwilly", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "John B", username: "johnnysins", program: "Communications", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Sarah Cameron", username: "sarahcameron", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Jet McGee", username: "Jettty", program: "Computer Science", school: .queens, friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Large Penis Dave", username: "PenisDave", program: "Psychology", school: .queens, friends: [], requests: [], houseUID: "")
+        
+    ]
 
 }
