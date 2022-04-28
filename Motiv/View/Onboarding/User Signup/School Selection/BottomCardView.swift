@@ -4,6 +4,9 @@ import SwiftUI
 
 struct BottomCardView: View {
     
+    // MARK: Allows for a custom back button
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var school: String
     @EnvironmentObject var onboardingVM: OnboardingViewModel
     
@@ -26,7 +29,16 @@ struct BottomCardView: View {
             }
             
             Button(action: {
-                onboardingVM.selectSchool()
+                
+                // MARK: Attempts sign in and catches error
+                DispatchQueue.main.async {
+                    onboardingVM.signupWithEmail()
+                                        
+                    if onboardingVM.errorActive {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                
             }, label: {
                 OnboardingButton(buttonText: "Sign up")
             })
@@ -44,7 +56,6 @@ struct BottomCardView: View {
                     .font(.footnote)
                     .fontWeight(.bold)
                     .foregroundColor(Color("LightBlue"))
-                
                 
             }
             Spacer()

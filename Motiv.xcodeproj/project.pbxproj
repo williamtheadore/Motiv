@@ -49,6 +49,9 @@
 		868FFB82281744410081D07C /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB81281744410081D07C /* OnboardingButton.swift */; };
 		868FFB8428174AF30081D07C /* CapsuleTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB8328174AF30081D07C /* CapsuleTabs.swift */; };
 		868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB85281760650081D07C /* OnboardingViewModel.swift */; };
+		86D220FD281A22E900AFC1A9 /* OptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D220FC281A22E900AFC1A9 /* OptionScreen.swift */; };
+		86D220FF281A22F200AFC1A9 /* OptionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D220FE281A22F200AFC1A9 /* OptionCardView.swift */; };
+		86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22100281A23A700AFC1A9 /* RootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		868FFB81281744410081D07C /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		868FFB8328174AF30081D07C /* CapsuleTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTabs.swift; sourceTree = "<group>"; };
 		868FFB85281760650081D07C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		86D220FC281A22E900AFC1A9 /* OptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScreen.swift; sourceTree = "<group>"; };
+		86D220FE281A22F200AFC1A9 /* OptionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCardView.swift; sourceTree = "<group>"; };
+		86D22100281A23A700AFC1A9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		8671CE89281836870068DE4A /* User Signup */ = {
 			isa = PBXGroup;
 			children = (
+				86D220FB281A22DA00AFC1A9 /* House Options */,
 				8680E2D72818EDE4001B4384 /* School Selection */,
 				8671CE93281856C40068DE4A /* SignupWithEmailScreen.swift */,
 				8671CE99281876140068DE4A /* ProgramDropDownMenu.swift */,
@@ -212,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				868FFB85281760650081D07C /* OnboardingViewModel.swift */,
+				86D22100281A23A700AFC1A9 /* RootViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -251,6 +259,15 @@
 				8671CE82281783630068DE4A /* GoogleButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		86D220FB281A22DA00AFC1A9 /* House Options */ = {
+			isa = PBXGroup;
+			children = (
+				86D220FC281A22E900AFC1A9 /* OptionScreen.swift */,
+				86D220FE281A22F200AFC1A9 /* OptionCardView.swift */,
+			);
+			path = "House Options";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,7 +382,10 @@
 				8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */,
 				8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */,
 				8671CE94281856C40068DE4A /* SignupWithEmailScreen.swift in Sources */,
+				86D220FD281A22E900AFC1A9 /* OptionScreen.swift in Sources */,
+				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
 				8671CE83281783630068DE4A /* GoogleButton.swift in Sources */,
+				86D220FF281A22F200AFC1A9 /* OptionCardView.swift in Sources */,
 				8680E2E12818EF1C001B4384 /* WesternCardView.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,
 			);

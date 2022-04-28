@@ -14,6 +14,9 @@ struct SelectSchoolView: View {
     @State var school = ""
     @EnvironmentObject var onboardingVM: OnboardingViewModel
     
+    // MARK: Required variable to return to sign up page upon Firebase error
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
         var body: some View {
             ZStack {
                 

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Firebase
 
+@MainActor
 class OnboardingViewModel: ObservableObject {
     
     @Published var tabSelection: Int = 0
@@ -16,12 +17,12 @@ class OnboardingViewModel: ObservableObject {
     // MARK: UI/UX Flow Variables
     @Published var schoolSelected: Bool = false
     @Published var showSchools: Bool = false
+    @Published var displaySchoolPage: Bool = false
     
     // MARK: Error Variables
-    @Published var emptyFieldError: Bool = false
-    @Published var passwordsMatchError: Bool = false
-    @Published var firebaseError: String = ""
-    @Published var errorMessage: String = "Error:"
+    @Published var errorActive: Bool = false
+    @Published var firebaseError: Bool = false
+    @Published var errorMessage: String = ""
     
     // MARK: App Storage Variables (Permanent)
     @AppStorage("signedIn") var signedIn = false
@@ -83,10 +84,8 @@ class OnboardingViewModel: ObservableObject {
     // MARK: Allows
     func selectSchool() {
         
-        DispatchQueue.main.async {
-            self.schoolSelected = true
-            self.showSchools.toggle()
-        }
+        self.schoolSelected = true
+        self.showSchools.toggle()
         
     }
     
@@ -98,17 +97,54 @@ class OnboardingViewModel: ObservableObject {
     // MARK: Authenticates and signs a user up with Firestore and Firebase Authentication
     func signupWithEmail() {
         
-
+        var uid: String = "EMPTY_UID"
         
+        self.errorDetection()
+        
+        if self.errorActive {
+            return
+        }
+        
+        let db = Firestore.firestore()
+        
+        // MARK: First step is authenticating user with Firebase Authentication
         Auth.auth().createUser(withEmail: self.email, password: self.password) { user, err in
             if let err = err {
-                print("Error signing up: \(err.localizedDescription)")
-                self.firebaseError = err.localizedDescription
+                print("Error signing up user: \(err.localizedDescription)")
+                
+                // Avoids appending the same error in the case of repeating errors
+                if self.errorMessage.contains("\n\(err.localizedDescription)") {
+                    
+                } else {
+                    
+                    self.errorMessage += self.errorMessage == "" ? "\(err.localizedDescription)" : "\n\(err.localizedDescription)"
+                    
+                }
+                
+                print("ACTIVATING ALERT FOR FIREBASE ERROR")
+                self.errorActive = true
                 return
+                
             }
             
-            print("\(user?.user.email ?? "NO EMAIL") has signed up succesfully.")
+            print("\(user?.user.email ?? "NO EMAIL") has successfully been authenticated.")
+            
         }
+        
+        uid = Auth.auth().currentUser?.uid ?? "ERROR_UID"
+        
+        db.collection("users").document(uid).setData([
+            "name" : self.name,
+            "username" : self.username,
+            "email" : self.email,
+            "program" : self.program,
+            "school" : self.school,
+            "uid" : uid
+        ])
+        
+        print(self.username + "successfully entered the database.")
+        
+        self.signedIn = true
         
     }
     
@@ -123,13 +159,40 @@ class OnboardingViewModel: ObservableObject {
         print(self.loginPassword)
     }
     
-    // MARK:
+    // MARK: Detects possible errors when signing up
     func errorDetection() {
         
-        if password != reenterPassword {
+        // MARK: Non-matching passwords error
+        if self.password != self.reenterPassword {
             
+            if self.errorMessage.contains("\nPasswords do not match") {
+                
+            } else {
+                self.errorMessage += self.errorMessage == "" ? "Passwords do not match" : "\nPasswords do not match"
+            }
+            
+            self.errorActive = true
+            print("Error Detected")
         }
         
+        // MARK: Empty Fields Error
+        if self.name.isEmpty || self.email.isEmpty || self.program == "Select Program" || self.password.count < 6 || self.reenterPassword.count < 6 || self.username.isEmpty {
+            
+            if self.errorMessage.contains("\nMissing Fields") {
+                
+            } else {
+                self.errorMessage += self.errorMessage == "" ? "Missing Fields" : "\nMissing Fields"
+            }
+            
+            self.errorActive = true
+            print("Error Detected")
+        }
+        
+        
+    }
+    
+    func signout() {
+        self.signedIn = false
     }
 
 }
