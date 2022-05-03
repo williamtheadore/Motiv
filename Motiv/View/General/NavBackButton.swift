@@ -15,7 +15,7 @@ struct NavBackButton: View {
             .frame(width: 13, height: 24)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 30)
-            .padding(.vertical)
+            .padding(.vertical, 20)
     }
 }
 

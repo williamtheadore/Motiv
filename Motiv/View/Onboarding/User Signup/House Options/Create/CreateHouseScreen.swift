@@ -22,7 +22,7 @@ struct CreateHouseScreen: View {
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 25) {
+        VStack(alignment: .center, spacing: 10) {
             
             // MARK: Navigation back button
             Button(action: {
@@ -41,6 +41,7 @@ struct CreateHouseScreen: View {
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 25)
+                .padding(.vertical, 5)
                 .animation(animation)
             
             // MARK: Add Cover Photo Rectangle
@@ -63,6 +64,7 @@ struct CreateHouseScreen: View {
                         .fontWeight(.light)
                 }
             }
+            .padding(.vertical, 10)
             .animation(animation)
 
             

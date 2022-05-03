@@ -34,6 +34,7 @@
 		8671CE98281859FF0068DE4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8671CE97281859FD0068DE4A /* LaunchScreen.storyboard */; };
 		8671CE9A281876150068DE4A /* ProgramDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE99281876140068DE4A /* ProgramDropDownMenu.swift */; };
 		8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */; };
+		867FA22C2821AB51003A17BD /* SchoolsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867FA22B2821AB51003A17BD /* SchoolsScreen.swift */; };
 		8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2D82818EF1C001B4384 /* TitleView.swift */; };
 		8680E2E02818EF1C001B4384 /* ScrollingHStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */; };
 		8680E2E12818EF1C001B4384 /* WesternCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DB2818EF1C001B4384 /* WesternCardView.swift */; };
@@ -72,6 +73,7 @@
 		8671CE97281859FD0068DE4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8671CE99281876140068DE4A /* ProgramDropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDropDownMenu.swift; sourceTree = "<group>"; };
 		8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
+		867FA22B2821AB51003A17BD /* SchoolsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsScreen.swift; sourceTree = "<group>"; };
 		8680E2D82818EF1C001B4384 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingHStackModifier.swift; sourceTree = "<group>"; };
 		8680E2DB2818EF1C001B4384 /* WesternCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WesternCardView.swift; sourceTree = "<group>"; };
@@ -157,9 +159,18 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		867FA22A2821AB2A003A17BD /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				867FA22B2821AB51003A17BD /* SchoolsScreen.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		8680E2D72818EDE4001B4384 /* School Selection */ = {
 			isa = PBXGroup;
 			children = (
+				867FA22A2821AB2A003A17BD /* Test */,
 				8680E2DA2818EF1C001B4384 /* Card Views */,
 				8680E2DD2818EF1C001B4384 /* BottomCardView.swift */,
 				8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */,
@@ -406,6 +417,7 @@
 				86D2210D281AEC1B00AFC1A9 /* HouseDropDownMenu.swift in Sources */,
 				8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */,
 				868FFB8028173B790081D07C /* CircleLogoView.swift in Sources */,
+				867FA22C2821AB51003A17BD /* SchoolsScreen.swift in Sources */,
 				86D2210B281AE4A900AFC1A9 /* JoinHouseScreen.swift in Sources */,
 				8671CE9A281876150068DE4A /* ProgramDropDownMenu.swift in Sources */,
 				8680E2E42818EF1C001B4384 /* SelectSchoolView.swift in Sources */,

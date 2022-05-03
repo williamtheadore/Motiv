@@ -204,23 +204,32 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func signout() {
+         
+        // MARK: Attempts sign out process and handles error accordingly
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error signing out.")
+            return
+        }
+        
         self.signedIn = false
     }
     
     // MARK: Test Users for Testing Purposes
     let users: [User] = [
-        User(uid: UUID().uuidString, name: "John Doe", username: "jDoe", program: "Economics", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Dylan Brown", username: "Brown23", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Mike Reynolds", username: "Slydes123", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "William Little", username: "willskates", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Jason Bourne", username: "JBourne69", program: "Arts", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Tyler Dawn", username: "TDog", program: "Sociology", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Heet Kantaria", username: "Heet", program: "Economics", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Will", username: "bigwilly", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "John B", username: "johnnysins", program: "Communications", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Sarah Cameron", username: "sarahcameron", program: "Engineering", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Jet McGee", username: "Jettty", program: "Computer Science", school: .queens, friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Large Penis Dave", username: "PenisDave", program: "Psychology", school: .queens, friends: [], requests: [], houseUID: "")
+        User(uid: UUID().uuidString, name: "John Doe", username: "jDoe", program: "Economics", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Dylan Brown", username: "Brown23", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Mike Reynolds", username: "Slydes123", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "William Little", username: "willskates", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Jason Bourne", username: "JBourne69", program: "Arts", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Tyler Dawn", username: "TDog", program: "Sociology", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Heet Kantaria", username: "Heet", program: "Economics", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Will", username: "bigwilly", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "John B", username: "johnnysins", program: "Communications", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Sarah Cameron", username: "sarahcameron", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Jet McGee", username: "Jettty", program: "Computer Science", school: "Queen's University", friends: [], requests: [], houseUID: ""),
+        User(uid: UUID().uuidString, name: "Big Dave", username: "HugeDave", program: "Psychology", school: "Queen's University", friends: [], requests: [], houseUID: "")
         
     ]
 

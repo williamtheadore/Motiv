@@ -17,9 +17,10 @@ struct OptionCardView: View {
         ZStack {
             
             // MARK: Background Circ
-            RoundedRectangle(cornerRadius: 15)
+            
+            LinearGradient(colors: [Color("DarkBlue"), Color("DarkBlue2")], startPoint: UnitPoint(x: 0, y: 0.5), endPoint: UnitPoint(x: 1, y: 0.5))
                 .frame(width: UIScreen.main.bounds.maxX - 30, height: 150)
-                .foregroundColor(Color("DarkBlue"))
+                .cornerRadius(15)
             
             HStack {
                 VStack(alignment: .leading, spacing: 3) {

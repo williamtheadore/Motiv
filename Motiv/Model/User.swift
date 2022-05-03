@@ -15,7 +15,7 @@ struct User: Decodable, Hashable {
     let name: String
     let username: String
     let program: String
-    let school: School
+    let school: String
     let friends: [String]
     let requests: [String]
     let houseUID: String

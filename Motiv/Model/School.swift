@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum School: Decodable {
-    
-    case queens
-    case stlawrence
-    
+struct School: Identifiable {
+        
+    let id = UUID()
+    let image: String
+    let logo: String
+    let title: String
+    let index: Int
+    var offset: CGFloat
 }

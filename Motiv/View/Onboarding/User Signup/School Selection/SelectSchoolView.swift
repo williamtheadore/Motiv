@@ -28,20 +28,6 @@ struct SelectSchoolView: View {
                         )
                     .blur(radius: showSchool ? 5 : 0)
                     .offset(x: -30, y: 15)
-                HStack(alignment: .center, spacing: 15) {
-                    QueensCardView()
-                        .onTapGesture {
-                            self.showSchool.toggle()
-                            onboardingVM.school = "Queen's University"
-                        }
-                    WesternCardView()
-                        .onTapGesture {
-                            self.showSchool.toggle()
-                            onboardingVM.school = "University of Western Ontario"
-                        }
-                }
-                    .modifier(ScrollingHStackModifier(items: 2, itemWidth: 350, itemSpacing: 30))
-                    .offset(y: -50)
                 BottomCardView(school: school)
                     .offset(y: showSchool ? 600 : 1000)
                     .blur(radius: showSchool ? 0 : 20)
