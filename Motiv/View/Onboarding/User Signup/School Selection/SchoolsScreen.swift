@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SchoolsScreen: View {
     
+    @EnvironmentObject var onboardingVM: OnboardingViewModel
+    
     @State var schools: [School] = [
         School(image: "queenscover", logo: "queenslogo", title: "Queen's University", index: 0, offset: 0),
         School(image: "stlawrencecover", logo: "slclogo", title: "St. Lawrence College", index: 1, offset: 0),
@@ -19,6 +21,8 @@ struct SchoolsScreen: View {
     ]
     
     @State var scrolled = 0
+    @State var schoolSelected = false
+    @State var school: String = ""
     
     func calculateWidth() -> CGFloat {
         
@@ -33,17 +37,39 @@ struct SchoolsScreen: View {
     
     var body: some View {
         ZStack {
+            
+            TitleView()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical)
+                .padding(.horizontal, 25)
+                .blur(radius: schoolSelected ? 5 : 0)
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                .offset(y: schoolSelected ? -60 : 0)
+
+            BottomCardView(school: self.school)
+                .offset(y: schoolSelected ? 650 : 1000)
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea()
+            
             ForEach(schools.reversed()) { school in
                 
                 HStack {
                     ZStack(alignment: .top) {
                         Image(school.image)
                             .resizable()
+                            .onTapGesture(perform: {
+                                
+                                // Only allow if school is sufficient
+                                if school.index < 2 {
+                                    self.schoolSelected.toggle()
+                                    self.onboardingVM.school = school.title
+                                }
+                            })
                         // MARK: Dynamic height dependent on index of school card
                             .aspectRatio(contentMode: .fill)
                             .frame(width: calculateWidth(), height: (UIScreen.main.bounds.height / 1.8) - CGFloat((school.index - scrolled) * 40))
                             .cornerRadius(25)
-                            .offset(x: CGFloat((school.index - scrolled) * 20))
 
                         VStack(alignment: .leading) {
                             HStack {
@@ -74,13 +100,17 @@ struct SchoolsScreen: View {
                             
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .offset(x: CGFloat((school.index - scrolled) * 20))
                         .padding(.vertical, 30)
                         .padding(.horizontal, 40)
                         
                         Spacer(minLength: 0)
                     }
+                    
+//                    .offset(x: CGFloat((school.index - scrolled) * 20))
+
                 }
+                .offset(x: CGFloat((school.index - scrolled) * 20))
+
                 .contentShape(Rectangle())
                 // Adding gesture
                 .offset(x: school.offset)
@@ -122,7 +152,7 @@ struct SchoolsScreen: View {
                             if school.index > 0 {
                                 
                                 if value.translation.width > 180 {
-                                    schools[school.index - 60].offset = 0
+                                    schools[school.index - 1].offset = 0
                                     scrolled -= 1
                                 } else {
                                     schools[school.index - 1].offset = -(calculateWidth() + 60)
@@ -134,14 +164,19 @@ struct SchoolsScreen: View {
                     
                 }))
             }
+            .offset(y: schoolSelected ? -60 : 0)
+            .blur(radius: schoolSelected ? 5 : 0)
+            .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
         }
+        .navigationBarHidden(true)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BG"))
+        .environmentObject(onboardingVM)
     }
 }
 
 struct SchoolsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SchoolsScreen()
+        SchoolsScreen().environmentObject(OnboardingViewModel())
     }
 }

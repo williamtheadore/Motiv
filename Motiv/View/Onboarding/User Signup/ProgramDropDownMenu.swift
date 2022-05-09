@@ -55,7 +55,7 @@ struct ProgramDropDownMenu: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .foregroundColor(Color("LightBlue"))
                                     .padding(.vertical, 5)
-                                    .offset(y: expand ? 0 : 1000)
+                                    .opacity(expand ? 1 : 0)
                                     .animation(animation)
                                 
                             })

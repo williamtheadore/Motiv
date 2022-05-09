@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>322168379992-c2otu968ihsj18p8sjrohi4e2amon11d.apps.googleusercontent.com</string>
+	<string>122300517309-6vjpakd4iplc2h3ass8fbqkob51p9m6c.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.322168379992-c2otu968ihsj18p8sjrohi4e2amon11d</string>
+	<string>com.googleusercontent.apps.122300517309-6vjpakd4iplc2h3ass8fbqkob51p9m6c</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAhqRDn4Y2-lrYBbYlP021C2VB4qiIDnGg</string>
+	<string>AIzaSyDb7dBDBSw880ctavUCEDhJCOZkbRsVZL0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>322168379992</string>
+	<string>122300517309</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>motivappinc.Motiv</string>
 	<key>PROJECT_ID</key>
-	<string>motivapp-fd56a</string>
+	<string>motiv-349217</string>
 	<key>STORAGE_BUCKET</key>
-	<string>motivapp-fd56a.appspot.com</string>
+	<string>motiv-349217.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:322168379992:ios:a39758f92b0f162d75482d</string>
+	<string>1:122300517309:ios:b67598aa40d37f0a4c20d4</string>
 </dict>
 </plist>

@@ -19,10 +19,11 @@ struct CustomNavLink: View {
                 .ignoresSafeArea()
             
             HStack {
-                Image("CAP")
+                Image(systemName: "person.3")
                     .resizable()
-                    .frame(width: 35, height: 20)
-                Text("Select School")
+                    .foregroundColor(.blue)
+                    .frame(width: 35, height: 18)
+                Text("Add Housemates")
                     .foregroundColor(Color("LightBlue"))
                     .fontWeight(.semibold)
                     .padding(.horizontal, 10)

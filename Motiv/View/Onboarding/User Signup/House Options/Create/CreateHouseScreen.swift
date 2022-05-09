@@ -41,7 +41,7 @@ struct CreateHouseScreen: View {
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 25)
-                .padding(.vertical, 5)
+                .padding(.bottom, 5)
                 .animation(animation)
             
             // MARK: Add Cover Photo Rectangle
@@ -72,6 +72,13 @@ struct CreateHouseScreen: View {
                 .animation(animation)
             
             HouseDropDownMenu()
+                .padding(.vertical, 5)
+            
+            NavigationLink(destination: {
+                HousemateSearch()
+            }, label: {
+                CustomNavLink()
+            })
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

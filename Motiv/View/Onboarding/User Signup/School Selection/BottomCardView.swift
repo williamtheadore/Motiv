@@ -33,6 +33,7 @@ struct BottomCardView: View {
                 // MARK: Attempts sign in and catches error
                 DispatchQueue.main.async {
                     onboardingVM.signupWithEmail()
+                    
                                         
                     if onboardingVM.errorActive {
                         presentationMode.wrappedValue.dismiss()

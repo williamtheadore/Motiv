@@ -18,6 +18,7 @@ class OnboardingViewModel: ObservableObject {
     @Published var schoolSelected: Bool = false
     @Published var showSchools: Bool = false
     @Published var displaySchoolPage: Bool = false
+    @Published var loading: Bool = false
     
     // MARK: Error Variables
     @Published var errorActive: Bool = false
@@ -44,7 +45,10 @@ class OnboardingViewModel: ObservableObject {
     // MARK: Create House Variables
     @Published var houseName: String = ""
     @Published var houseStyle: String = "Select Type"
-    @Published var housemates: [String] = []
+    @Published var housemates: [User] = []
+    
+    // MARK: Search Query Variables
+    @Published var housemateSearch: String = ""
 
     let titles = [
         "Welcome to Motiv",
@@ -108,8 +112,10 @@ class OnboardingViewModel: ObservableObject {
     // MARK: Authenticates and signs a user up with Firestore and Firebase Authentication
     func signupWithEmail() {
         
-        var uid: String = "EMPTY_UID"
+        self.loading = true
         
+        var uid: String = "EMPTY"
+                
         self.errorDetection()
         
         if self.errorActive {
@@ -123,40 +129,41 @@ class OnboardingViewModel: ObservableObject {
             if let err = err {
                 print("Error signing up user: \(err.localizedDescription)")
                 
-                // Avoids appending the same error in the case of repeating errors
+                // Avoids pushing the same error in the case of repeating errors
                 if self.errorMessage.contains("\n\(err.localizedDescription)") {
                     
                 } else {
                     
                     self.errorMessage += self.errorMessage == "" ? "\(err.localizedDescription)" : "\n\(err.localizedDescription)"
-                    
                 }
                 
                 print("ACTIVATING ALERT FOR FIREBASE ERROR")
                 self.errorActive = true
+                self.loading = false
                 return
                 
             }
             
             print("\(user?.user.email ?? "NO EMAIL") has successfully been authenticated.")
+            uid = Auth.auth().currentUser?.uid ?? "ERROR_ID"
             
+            db.collection("users").document(uid).setData([
+                "name" : self.name,
+                "username" : self.username,
+                "email" : self.email,
+                "program" : self.program,
+                "school" : self.school,
+                "friends" : [],
+                "uid" : uid
+            ])
+
         }
         
-        uid = Auth.auth().currentUser?.uid ?? "ERROR_UID"
-        
-        db.collection("users").document(uid).setData([
-            "name" : self.name,
-            "username" : self.username,
-            "email" : self.email,
-            "program" : self.program,
-            "school" : self.school,
-            "friends" : [],
-            "uid" : uid
-        ])
         
         print(self.username + "successfully entered the database.")
         
         self.signedIn = true
+        self.loading = false
         
     }
     
@@ -167,10 +174,18 @@ class OnboardingViewModel: ObservableObject {
     
     // MARK: Authenticates and attempts to login user through Firebase Authentication
     func login() {
-        print(self.loginEmail)
-        print(self.loginPassword)
+        
+        Auth.auth().signIn(withEmail: loginEmail, password: loginPassword) { res, err in
+            if let err = err {
+                print("Error during Firebase Authentication sign in: \(err.localizedDescription)")
+                return
+            }
+            
+            print("\(res?.user.email ?? "") signed in with Firebase Authentication")
+            
+        }
     }
-    
+     
     // MARK: Detects possible errors when signing up
     func errorDetection() {
         
@@ -216,21 +231,6 @@ class OnboardingViewModel: ObservableObject {
         self.signedIn = false
     }
     
-    // MARK: Test Users for Testing Purposes
-    let users: [User] = [
-        User(uid: UUID().uuidString, name: "John Doe", username: "jDoe", program: "Economics", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Dylan Brown", username: "Brown23", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Mike Reynolds", username: "Slydes123", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "William Little", username: "willskates", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Jason Bourne", username: "JBourne69", program: "Arts", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Tyler Dawn", username: "TDog", program: "Sociology", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Heet Kantaria", username: "Heet", program: "Economics", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Will", username: "bigwilly", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "John B", username: "johnnysins", program: "Communications", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Sarah Cameron", username: "sarahcameron", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Jet McGee", username: "Jettty", program: "Computer Science", school: "Queen's University", friends: [], requests: [], houseUID: ""),
-        User(uid: UUID().uuidString, name: "Big Dave", username: "HugeDave", program: "Psychology", school: "Queen's University", friends: [], requests: [], houseUID: "")
-        
-    ]
+    
 
 }

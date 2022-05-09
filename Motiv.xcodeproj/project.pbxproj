@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		866EA6802822EC73009FD12B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 866EA67F2822EC73009FD12B /* GoogleService-Info.plist */; };
 		8671CE63281782A00068DE4A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE62281782A00068DE4A /* FirebaseAnalytics */; };
 		8671CE65281782A00068DE4A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE64281782A00068DE4A /* FirebaseAnalyticsSwift-Beta */; };
 		8671CE67281782A00068DE4A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE66281782A00068DE4A /* FirebaseAuth */; };
@@ -24,7 +25,6 @@
 		8671CE7F281782A00068DE4A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE7E281782A00068DE4A /* FirebaseStorage */; };
 		8671CE81281782A00068DE4A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE80281782A00068DE4A /* FirebaseStorageCombine-Community */; };
 		8671CE83281783630068DE4A /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE82281783630068DE4A /* GoogleButton.swift */; };
-		8671CE8728178A510068DE4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8671CE8628178A510068DE4A /* GoogleService-Info.plist */; };
 		8671CE8B281836A40068DE4A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8A281836A40068DE4A /* LoginScreen.swift */; };
 		8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8C281837E30068DE4A /* GenericTextField.swift */; };
 		8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE8E28183CDD0068DE4A /* NavBackButton.swift */; };
@@ -36,9 +36,6 @@
 		8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */; };
 		867FA22C2821AB51003A17BD /* SchoolsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867FA22B2821AB51003A17BD /* SchoolsScreen.swift */; };
 		8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2D82818EF1C001B4384 /* TitleView.swift */; };
-		8680E2E02818EF1C001B4384 /* ScrollingHStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */; };
-		8680E2E12818EF1C001B4384 /* WesternCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DB2818EF1C001B4384 /* WesternCardView.swift */; };
-		8680E2E22818EF1C001B4384 /* QueensCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DC2818EF1C001B4384 /* QueensCardView.swift */; };
 		8680E2E32818EF1C001B4384 /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DD2818EF1C001B4384 /* BottomCardView.swift */; };
 		8680E2E42818EF1C001B4384 /* SelectSchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680E2DE2818EF1C001B4384 /* SelectSchoolView.swift */; };
 		868FFB6A281736030081D07C /* MotivApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB69281736030081D07C /* MotivApp.swift */; };
@@ -50,6 +47,9 @@
 		868FFB82281744410081D07C /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB81281744410081D07C /* OnboardingButton.swift */; };
 		868FFB8428174AF30081D07C /* CapsuleTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB8328174AF30081D07C /* CapsuleTabs.swift */; };
 		868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB85281760650081D07C /* OnboardingViewModel.swift */; };
+		86900E6028284FE6001442EA /* AlgoliaSearchClient in Frameworks */ = {isa = PBXBuildFile; productRef = 86900E5F28284FE6001442EA /* AlgoliaSearchClient */; };
+		86900E6228287DCD001442EA /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86900E6128287DCD001442EA /* AddUserView.swift */; };
+		86900E6528287E71001442EA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 86900E6428287E71001442EA /* SDWebImageSwiftUI */; };
 		86D220FD281A22E900AFC1A9 /* OptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D220FC281A22E900AFC1A9 /* OptionScreen.swift */; };
 		86D220FF281A22F200AFC1A9 /* OptionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D220FE281A22F200AFC1A9 /* OptionCardView.swift */; };
 		86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22100281A23A700AFC1A9 /* RootViewModel.swift */; };
@@ -58,12 +58,14 @@
 		86D22109281AE4A000AFC1A9 /* CreateHouseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22108281AE4A000AFC1A9 /* CreateHouseScreen.swift */; };
 		86D2210B281AE4A900AFC1A9 /* JoinHouseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2210A281AE4A900AFC1A9 /* JoinHouseScreen.swift */; };
 		86D2210D281AEC1B00AFC1A9 /* HouseDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2210C281AEC1B00AFC1A9 /* HouseDropDownMenu.swift */; };
-		86D2210F281AF9ED00AFC1A9 /* AddHousemates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2210E281AF9EA00AFC1A9 /* AddHousemates.swift */; };
+		86D937F728220816006EB0E4 /* HousemateSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937F628220815006EB0E4 /* HousemateSearch.swift */; };
+		86D937FA2822098D006EB0E4 /* GenericSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937F92822098D006EB0E4 /* GenericSearchBar.swift */; };
+		86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		866EA67F2822EC73009FD12B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8671CE82281783630068DE4A /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
-		8671CE8628178A510068DE4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8671CE8A281836A40068DE4A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		8671CE8C281837E30068DE4A /* GenericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextField.swift; sourceTree = "<group>"; };
 		8671CE8E28183CDD0068DE4A /* NavBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBackButton.swift; sourceTree = "<group>"; };
@@ -75,9 +77,6 @@
 		8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
 		867FA22B2821AB51003A17BD /* SchoolsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsScreen.swift; sourceTree = "<group>"; };
 		8680E2D82818EF1C001B4384 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingHStackModifier.swift; sourceTree = "<group>"; };
-		8680E2DB2818EF1C001B4384 /* WesternCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WesternCardView.swift; sourceTree = "<group>"; };
-		8680E2DC2818EF1C001B4384 /* QueensCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensCardView.swift; sourceTree = "<group>"; };
 		8680E2DD2818EF1C001B4384 /* BottomCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
 		8680E2DE2818EF1C001B4384 /* SelectSchoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSchoolView.swift; sourceTree = "<group>"; };
 		868FFB66281736030081D07C /* Motiv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motiv.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +89,7 @@
 		868FFB81281744410081D07C /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		868FFB8328174AF30081D07C /* CapsuleTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTabs.swift; sourceTree = "<group>"; };
 		868FFB85281760650081D07C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		86900E6128287DCD001442EA /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		86D220FC281A22E900AFC1A9 /* OptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScreen.swift; sourceTree = "<group>"; };
 		86D220FE281A22F200AFC1A9 /* OptionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCardView.swift; sourceTree = "<group>"; };
 		86D22100281A23A700AFC1A9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
@@ -98,7 +98,9 @@
 		86D22108281AE4A000AFC1A9 /* CreateHouseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHouseScreen.swift; sourceTree = "<group>"; };
 		86D2210A281AE4A900AFC1A9 /* JoinHouseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinHouseScreen.swift; sourceTree = "<group>"; };
 		86D2210C281AEC1B00AFC1A9 /* HouseDropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDropDownMenu.swift; sourceTree = "<group>"; };
-		86D2210E281AF9EA00AFC1A9 /* AddHousemates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHousemates.swift; sourceTree = "<group>"; };
+		86D937F628220815006EB0E4 /* HousemateSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousemateSearch.swift; sourceTree = "<group>"; };
+		86D937F92822098D006EB0E4 /* GenericSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSearchBar.swift; sourceTree = "<group>"; };
+		86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,10 @@
 				8671CE77281782A00068DE4A /* FirebaseFunctionsSwift-Beta in Frameworks */,
 				8671CE67281782A00068DE4A /* FirebaseAuth in Frameworks */,
 				8671CE7F281782A00068DE4A /* FirebaseStorage in Frameworks */,
+				86900E6028284FE6001442EA /* AlgoliaSearchClient in Frameworks */,
 				8671CE63281782A00068DE4A /* FirebaseAnalytics in Frameworks */,
 				8671CE81281782A00068DE4A /* FirebaseStorageCombine-Community in Frameworks */,
+				86900E6528287E71001442EA /* SDWebImageSwiftUI in Frameworks */,
 				8671CE7B281782A00068DE4A /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				8671CE71281782A00068DE4A /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				8671CE69281782A00068DE4A /* FirebaseAuthCombine-Community in Frameworks */,
@@ -151,6 +155,7 @@
 		8671CE9028183CEA0068DE4A /* General */ = {
 			isa = PBXGroup;
 			children = (
+				86D937F92822098D006EB0E4 /* GenericSearchBar.swift */,
 				8671CE9B2818C7A00068DE4A /* CustomNavLink.swift */,
 				8671CE8C281837E30068DE4A /* GenericTextField.swift */,
 				8671CE8E28183CDD0068DE4A /* NavBackButton.swift */,
@@ -159,40 +164,21 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		867FA22A2821AB2A003A17BD /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				867FA22B2821AB51003A17BD /* SchoolsScreen.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		8680E2D72818EDE4001B4384 /* School Selection */ = {
 			isa = PBXGroup;
 			children = (
-				867FA22A2821AB2A003A17BD /* Test */,
-				8680E2DA2818EF1C001B4384 /* Card Views */,
+				867FA22B2821AB51003A17BD /* SchoolsScreen.swift */,
 				8680E2DD2818EF1C001B4384 /* BottomCardView.swift */,
-				8680E2D92818EF1C001B4384 /* ScrollingHStackModifier.swift */,
 				8680E2DE2818EF1C001B4384 /* SelectSchoolView.swift */,
 				8680E2D82818EF1C001B4384 /* TitleView.swift */,
 			);
 			path = "School Selection";
 			sourceTree = "<group>";
 		};
-		8680E2DA2818EF1C001B4384 /* Card Views */ = {
-			isa = PBXGroup;
-			children = (
-				8680E2DB2818EF1C001B4384 /* WesternCardView.swift */,
-				8680E2DC2818EF1C001B4384 /* QueensCardView.swift */,
-			);
-			path = "Card Views";
-			sourceTree = "<group>";
-		};
 		868FFB5D281736030081D07C = {
 			isa = PBXGroup;
 			children = (
-				8671CE8628178A510068DE4A /* GoogleService-Info.plist */,
+				866EA67F2822EC73009FD12B /* GoogleService-Info.plist */,
 				868FFB68281736030081D07C /* Motiv */,
 				868FFB67281736030081D07C /* Products */,
 			);
@@ -242,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				868FFB85281760650081D07C /* OnboardingViewModel.swift */,
+				86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */,
 				86D22100281A23A700AFC1A9 /* RootViewModel.swift */,
 			);
 			path = "View Model";
@@ -300,8 +287,9 @@
 		86D22106281AE48300AFC1A9 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				86D937F628220815006EB0E4 /* HousemateSearch.swift */,
+				86900E6128287DCD001442EA /* AddUserView.swift */,
 				86D22108281AE4A000AFC1A9 /* CreateHouseScreen.swift */,
-				86D2210E281AF9EA00AFC1A9 /* AddHousemates.swift */,
 				86D2210C281AEC1B00AFC1A9 /* HouseDropDownMenu.swift */,
 			);
 			path = Create;
@@ -348,6 +336,8 @@
 				8671CE7C281782A00068DE4A /* FirebaseMessaging */,
 				8671CE7E281782A00068DE4A /* FirebaseStorage */,
 				8671CE80281782A00068DE4A /* FirebaseStorageCombine-Community */,
+				86900E5F28284FE6001442EA /* AlgoliaSearchClient */,
+				86900E6428287E71001442EA /* SDWebImageSwiftUI */,
 			);
 			productName = Motiv;
 			productReference = 868FFB66281736030081D07C /* Motiv.app */;
@@ -379,6 +369,8 @@
 			mainGroup = 868FFB5D281736030081D07C;
 			packageReferences = (
 				8671CE61281782A00068DE4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				86900E5E28284FE6001442EA /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */,
+				86900E6328287E71001442EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 868FFB67281736030081D07C /* Products */;
 			projectDirPath = "";
@@ -395,8 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				868FFB71281736070081D07C /* Preview Assets.xcassets in Resources */,
+				866EA6802822EC73009FD12B /* GoogleService-Info.plist in Resources */,
 				8671CE98281859FF0068DE4A /* LaunchScreen.storyboard in Resources */,
-				8671CE8728178A510068DE4A /* GoogleService-Info.plist in Resources */,
 				868FFB6E281736070081D07C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,22 +406,23 @@
 				868FFB7E28173B670081D07C /* MainScreen.swift in Sources */,
 				8671CE96281856E00068DE4A /* SignupWithGoogleScreen.swift in Sources */,
 				8671CE8B281836A40068DE4A /* LoginScreen.swift in Sources */,
+				86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */,
 				86D2210D281AEC1B00AFC1A9 /* HouseDropDownMenu.swift in Sources */,
 				8671CE92281848050068DE4A /* GenericSecureField.swift in Sources */,
 				868FFB8028173B790081D07C /* CircleLogoView.swift in Sources */,
+				86D937FA2822098D006EB0E4 /* GenericSearchBar.swift in Sources */,
 				867FA22C2821AB51003A17BD /* SchoolsScreen.swift in Sources */,
 				86D2210B281AE4A900AFC1A9 /* JoinHouseScreen.swift in Sources */,
 				8671CE9A281876150068DE4A /* ProgramDropDownMenu.swift in Sources */,
 				8680E2E42818EF1C001B4384 /* SelectSchoolView.swift in Sources */,
+				86900E6228287DCD001442EA /* AddUserView.swift in Sources */,
 				868FFB8428174AF30081D07C /* CapsuleTabs.swift in Sources */,
 				8671CE8D281837E30068DE4A /* GenericTextField.swift in Sources */,
+				86D937F728220816006EB0E4 /* HousemateSearch.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
 				86D22105281ADCA700AFC1A9 /* School.swift in Sources */,
 				8671CE8F28183CDD0068DE4A /* NavBackButton.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
-				8680E2E02818EF1C001B4384 /* ScrollingHStackModifier.swift in Sources */,
-				8680E2E22818EF1C001B4384 /* QueensCardView.swift in Sources */,
-				86D2210F281AF9ED00AFC1A9 /* AddHousemates.swift in Sources */,
 				86D22109281AE4A000AFC1A9 /* CreateHouseScreen.swift in Sources */,
 				8680E2DF2818EF1C001B4384 /* TitleView.swift in Sources */,
 				8671CE9C2818C7A10068DE4A /* CustomNavLink.swift in Sources */,
@@ -438,7 +431,6 @@
 				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
 				8671CE83281783630068DE4A /* GoogleButton.swift in Sources */,
 				86D220FF281A22F200AFC1A9 /* OptionCardView.swift in Sources */,
-				8680E2E12818EF1C001B4384 /* WesternCardView.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +648,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		86900E5E28284FE6001442EA /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/algolia/algoliasearch-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		86900E6328287E71001442EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -738,6 +746,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8671CE61281782A00068DE4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		86900E5F28284FE6001442EA /* AlgoliaSearchClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86900E5E28284FE6001442EA /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = AlgoliaSearchClient;
+		};
+		86900E6428287E71001442EA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86900E6328287E71001442EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

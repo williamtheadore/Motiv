@@ -68,10 +68,11 @@ struct SignupWithEmailScreen: View {
                     
                     // MARK: Links to school selection page
                     NavigationLink(destination: {
-                        SelectSchoolView()},
+                        SchoolsScreen()},
                                    label: { OnboardingButton(buttonText: "Continue") })
+                        .frame(maxHeight: .infinity, alignment: .bottom)
                         .padding()
-                        .offset(y: 70)
+//                        .offset(y: 70)
                     
                     
                     

@@ -14,9 +14,10 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                if !onboardingVM.signedIn {
+                if onboardingVM.loading {
+                    Text("Loading")
+                } else if !onboardingVM.signedIn {
                     MainScreen()
-                    
                 } else {
                     OptionScreen()
                 }

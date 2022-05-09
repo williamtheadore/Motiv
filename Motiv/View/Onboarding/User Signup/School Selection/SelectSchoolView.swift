@@ -14,11 +14,11 @@ struct SelectSchoolView: View {
     @State var school = ""
     @EnvironmentObject var onboardingVM: OnboardingViewModel
     
-    // MARK: Required variable to return to sign up page upon Firebase error
+    // MARK: Variable required to return to sign up page upon Firebase error
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
         var body: some View {
-            ZStack {
+            VStack {
                 
                 TitleView()
                     .animation(
@@ -28,10 +28,13 @@ struct SelectSchoolView: View {
                         )
                     .blur(radius: showSchool ? 5 : 0)
                     .offset(x: -30, y: 15)
+                SchoolsScreen()
+                    .onTapGesture {
+                        showSchool.toggle()
+                    }
                 BottomCardView(school: school)
-                    .offset(y: showSchool ? 600 : 1000)
-                    .blur(radius: showSchool ? 0 : 20)
-                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+//                    .blur(radius: showSchool ? 0 : 20)
+
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarHidden(true)
