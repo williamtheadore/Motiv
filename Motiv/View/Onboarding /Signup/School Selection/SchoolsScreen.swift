@@ -22,6 +22,8 @@ struct SchoolsScreen: View {
     @State var schoolSelected = false
     @State var school: String = ""
     
+    @EnvironmentObject var onboardingVM: OnboardingViewModel
+    
     func calculateWidth() -> CGFloat {
         
         // 30 Padding
@@ -60,6 +62,7 @@ struct SchoolsScreen: View {
                 .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .ignoresSafeArea()
+                .environmentObject(onboardingVM)
             
             ForEach(schools.reversed()) { school in
                 
@@ -73,7 +76,7 @@ struct SchoolsScreen: View {
                                 // Queen's & SLC
                                 if school.index < 2 {
                                     self.schoolSelected.toggle()
-                                    self.school = school.title
+                                    onboardingVM.school = school.title
                                 }
                             })
                         // MARK: Dynamic height dependent on index of school card

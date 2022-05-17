@@ -19,22 +19,40 @@ struct GenericTextField: View {
             RoundedRectangle(cornerRadius: 5)
                 .frame(width: UIScreen.main.bounds.maxX - 60, height: 60)
                 .foregroundColor(Color("DarkBlue"))
-                .offset(y: -3)
             
             VStack(alignment: .leading) {
                 Text(text)
                     .foregroundColor(Color("ButtonTitle"))
                     .padding(.horizontal, 50)
+                    .padding(.vertical, -10)
+                    .offset(y: 3)
                     .font(.footnote)
-                    .padding(.vertical, -9)
-                ZStack {
+                if input.isEmpty {
                     
-                    TextField("", text: $input)
-                        .padding(.horizontal, 50)
-                        .foregroundColor(Color("LightBlue"))
-                        .autocapitalization(.none)
+
+                    ZStack {
+                        Text("\(text)...")
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 50)
+                        TextField("", text: $input)
+                            .padding(.horizontal, 50)
+                            .foregroundColor(Color("LightBlue"))
+                            .autocapitalization(.none)
+                    }
+                    .offset(y: 3)
+
+                } else {
+                    ZStack {
+                        TextField("", text: $input)
+                            .padding(.horizontal, 50)
+                            .foregroundColor(Color("LightBlue"))
+                            .autocapitalization(.none)
+                    }
+                    .offset(y: 3)
 
                 }
+                
             }
         }
     }

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>122300517309-6vjpakd4iplc2h3ass8fbqkob51p9m6c.apps.googleusercontent.com</string>
+	<string>122300517309-s6llq0f3ec9dsse5jku53jc88ooj1ekq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.122300517309-6vjpakd4iplc2h3ass8fbqkob51p9m6c</string>
+	<string>com.googleusercontent.apps.122300517309-s6llq0f3ec9dsse5jku53jc88ooj1ekq</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDb7dBDBSw880ctavUCEDhJCOZkbRsVZL0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>motivappinc.Motiv</string>
+	<string>motivappinc.MotivEventPlanner</string>
 	<key>PROJECT_ID</key>
 	<string>motiv-349217</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:122300517309:ios:b67598aa40d37f0a4c20d4</string>
+	<string>1:122300517309:ios:12a6d2f24874e5364c20d4</string>
 </dict>
 </plist>

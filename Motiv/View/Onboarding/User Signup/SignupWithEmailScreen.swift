@@ -44,27 +44,22 @@ struct SignupWithEmailScreen: View {
                     
                     // MARK: Name input field
                     GenericTextField(text: "Name", input: $onboardingVM.name)
-                        .animation(animation)
                     
                     // MARK: Username input field
                     GenericTextField(text: "Username", input: $onboardingVM.username)
-                        .animation(animation)
                     
                     // MARK: Program drop down menu
                     ProgramDropDownMenu()
                     
                     // MARK: Email input field
                     GenericTextField(text: "Email", input: $onboardingVM.email)
-                        .animation(animation)
                     
                     // MARK: Password input field
                     GenericSecureField(text: "Password", input: $onboardingVM.password)
-                        .animation(animation)
                     
                     
                     // MARK: Re-Enter Password input field
                     GenericSecureField(text: "Re-Enter Password", input: $onboardingVM.reenterPassword)
-                        .animation(animation)
                     
                     // MARK: Links to school selection page
                     NavigationLink(destination: {
@@ -72,9 +67,6 @@ struct SignupWithEmailScreen: View {
                                    label: { OnboardingButton(buttonText: "Continue") })
                         .frame(maxHeight: .infinity, alignment: .bottom)
                         .padding()
-//                        .offset(y: 70)
-                    
-                    
                     
                     
                 }

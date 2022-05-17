@@ -11,9 +11,8 @@ import Firebase
 @main
 struct MotivApp: App {
     
-    init() {
-        FirebaseApp.configure()
-    }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     
     var body: some Scene {
         WindowGroup {
@@ -21,3 +20,4 @@ struct MotivApp: App {
         }
     }
 }
+

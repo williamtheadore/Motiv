@@ -21,15 +21,15 @@ struct OptionScreen: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .padding(.horizontal)
-                    .padding(.top)
+                    .padding(.top, 25)
                 
                 // MARK: Leads to create a house page
                 NavigationLink(destination: {
                     CreateHouseScreen()
                 }, label: {
-                    OptionCardView(titleText: "Create a house", captionText: "Create your house type and invite\nyour housemates to join.", systemImageName: "plus")
+                    OptionCardView(titleText: "Create a house", captionText: "Invite your housemates  and\ncustomize your page.", systemImageName: "plus")
                 })
-                    .offset(y: -80)
+                    .offset(y: -100)
 
                 
                 // MARK: Leads to join a house page
@@ -38,7 +38,7 @@ struct OptionScreen: View {
                 }, label: {
                     OptionCardView(titleText: "Join a house", captionText: "Join an existing house and start\nhosting events.", systemImageName: "house")
                 })
-                    .offset(y: -75)
+                    .offset(y: -95)
                 
                 Button(action: {
                     onboardingVM.signout()

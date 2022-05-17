@@ -4,10 +4,9 @@ import SwiftUI
 
 struct BottomCardView: View {
     
-    // MARK: Allows for a custom back button
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     var school: String
+    
+    @EnvironmentObject var onboardingVM: OnboardingViewModel
     
     var body: some View {
         VStack(spacing: 20) {
@@ -20,7 +19,7 @@ struct BottomCardView: View {
                 Text("Join")
                     .font(.headline)
                     .foregroundColor(.white)
-                Text(" Queen's University?")
+                Text(" " + onboardingVM.school + "?")
                     .fontWeight(.bold)
                     .font(.headline)
                     .foregroundColor(.white)
@@ -29,26 +28,11 @@ struct BottomCardView: View {
             
             NavigationLink(destination: {
                 ProgramInputView()
+                    .environmentObject(onboardingVM)
             }, label: {
                 OnboardingButton(buttonText: "Continue")
 
             })
-
-            HStack(spacing: 5) {
-                
-                Text("Terms of Service")
-                    .font(.footnote)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("LightBlue"))
-                Text("and")
-                    .font(.footnote)
-                    .foregroundColor(Color("LightBlue"))
-                Text("Privacy Policy")
-                    .font(.footnote)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("LightBlue"))
-                
-            }
             Spacer()
         }
         .padding(.top, 8)

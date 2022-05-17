@@ -26,9 +26,23 @@ struct GenericSearchBar: View {
                     .frame(width: 19, height: 19)
                     .foregroundColor(.gray)
                 
-                TextField("Username or name...", text: $input)
-                    .autocapitalization(.none)
-                    .foregroundColor(.white)
+                if input.isEmpty {
+                    ZStack {
+                        Text("Username or name...")
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        TextField("", text: $input)
+                            .autocapitalization(.none)
+                            .foregroundColor(.white)
+                    }
+                } else {
+                    ZStack {
+                        TextField("", text: $input)
+                            .autocapitalization(.none)
+                            .foregroundColor(.white)
+                    }
+                }
+                
                 
             }
             .padding(.horizontal, 40)

@@ -6,25 +6,42 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct RootView: View {
+        
+    @AppStorage("onboardingComplete") var onboardingComplete: Bool = false
+    @AppStorage("signedIn") var signedIn: Bool = false
+    @AppStorage("loading") var loading: Bool = false
     
-    @StateObject var onboardingVM = OnboardingViewModel()
+    @StateObject var rootVM = RootViewModel()
     
     var body: some View {
-        NavigationView {
+        
+        // MARK: Root View always allow for loading screen as storage variable
+        if loading {
             ZStack {
-                if onboardingVM.loading {
-                    Text("Loading")
-                } else if !onboardingVM.signedIn {
-                    MainScreen()
+                ProgressView()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BG"))
+        } else {
+            if !signedIn {
+                // MARK: 
+                if !onboardingComplete {
+                    OnboardingScreens()
                 } else {
-                    OptionScreen()
+                    NameInputView()
+                }
+            } else {
+                VStack {
+                    Text("Tab View")
+                    Button("Sign out") {
+                        rootVM.signout()
+                    }
                 }
             }
         }
-        .environmentObject(onboardingVM)
-
     }
 }
 

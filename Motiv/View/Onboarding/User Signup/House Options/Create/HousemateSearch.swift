@@ -48,12 +48,25 @@ struct HousemateSearch: View {
                 
                 // MARK: Users List
                 ScrollView(.vertical, showsIndicators: false) {
-                    
-                    ForEach(indexVM.users, id: \.self) { user in
-                        AddUserView(user: user)
-                            .padding(.vertical, 10)
+                    // MARK: Display added housemates if no search query
+                    if onboardingVM.housemateSearch.isEmpty {
+                        ForEach(onboardingVM.housemates, id: \.self) { user in
+                            AddUserView(user: user, added: true)
+                                .padding(.vertical, 10)
+                        }
+                    } else {
+                        //
+                        ForEach(indexVM.users, id: \.self) { user in
+                            if onboardingVM.housemates.contains(user) {
+                                AddUserView(user: user, added: true)
+                                    .padding(.vertical, 10)
+                            } else {
+                                AddUserView(user: user, added: false)
+                                    .padding(.vertical, 10)
+                            }
+                        }
                     }
-                    
+
                 }
                 
                 // MARK:
@@ -69,7 +82,7 @@ struct HousemateSearch: View {
             
         }
         .onChange(of: onboardingVM.housemateSearch) { newSearch in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 indexVM.searchUsers(onboardingVM.housemateSearch)
             }
         }

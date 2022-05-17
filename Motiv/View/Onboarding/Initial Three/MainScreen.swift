@@ -17,7 +17,8 @@ struct MainScreen: View {
         
         VStack {
             
-            Group {
+            // MARK: Main Centre View
+            VStack {
                 
                 // MARK: Fixed Logo View
                 CircleLogoView()
@@ -38,7 +39,7 @@ struct MainScreen: View {
                     .padding(.vertical, -10)
                     .font(.system(size: 16))
             }
-            .offset(y: 130)
+            .offset(y: 60)
             
             // MARK: Sign up and continue buttons
             VStack(spacing: 15) {

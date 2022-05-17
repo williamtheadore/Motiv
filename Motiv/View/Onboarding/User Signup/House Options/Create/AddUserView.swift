@@ -14,11 +14,23 @@ struct AddUserView: View {
     
     
     let user: User
-    @State var added: Bool = false
+    @State var added: Bool
     
+    // Adds and removes users to housemate list
     func addUser(user: User) {
         
-        self.onboardingVM.housemates.append(user)
+        if self.onboardingVM.housemates.contains(user) {
+            
+            if let index = self.onboardingVM.housemates.firstIndex(of: user) {
+                self.onboardingVM.housemates.remove(at: index)
+            }
+            
+        } else {
+            
+            self.onboardingVM.housemates.append(user)
+            
+        }
+        
         self.added.toggle()
         
     }
@@ -30,7 +42,6 @@ struct AddUserView: View {
                 .resizable()
                 .clipShape(Circle())
                 .scaledToFill()
-                .border(.black, width: 2)
                 .frame(width: 50, height: 50)
             
             VStack(alignment: .leading) {
@@ -58,6 +69,7 @@ struct AddUserView: View {
                             .font(.footnote)
                             .foregroundColor(Color("LightBlue"))
                     }
+                    .animation(.easeInOut)
                 } else {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
@@ -70,9 +82,9 @@ struct AddUserView: View {
                             .font(.footnote)
                             .foregroundColor(Color("LightBlue"))
                     }
+                    .animation(.easeInOut)
                 }
             })
-                .animation(.easeInOut)
         }
         .padding(.horizontal, 20)
         .environmentObject(onboardingVM)
