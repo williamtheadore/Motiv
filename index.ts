@@ -1,3 +1,7 @@
+// MOTIV APP INC.
+// WILLIAM LITTLE
+// 2022-05-11
+
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 import algoliasearch from "algoliasearch";
