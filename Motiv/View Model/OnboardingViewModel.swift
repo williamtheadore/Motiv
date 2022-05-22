@@ -34,7 +34,11 @@ class OnboardingViewModel: ObservableObject {
             return
         }
         
+        let currDate: Date = Date.now
+        
         db.collection("users").document(uid).setData([
+            "uid" : uid,
+            "dateCreated" : currDate,
             "fullName" : self.fullName,
             "username" : self.username,
             "school" : self.school,
@@ -43,7 +47,7 @@ class OnboardingViewModel: ObservableObject {
         ])
         
         self.loading = false
-    
+
     }
     
 }

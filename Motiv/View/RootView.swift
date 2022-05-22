@@ -34,12 +34,8 @@ struct RootView: View {
                     NameInputView()
                 }
             } else {
-                VStack {
-                    Text("Tab View")
-                    Button("Sign out") {
-                        rootVM.signout()
-                    }
-                }
+                    MainRootView()
+                    .environmentObject(rootVM)
             }
         }
     }

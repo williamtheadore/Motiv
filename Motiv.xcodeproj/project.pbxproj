@@ -13,8 +13,19 @@
 		861FFFE02832D72B0015914C /* CapsuleTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FFFDF2832D72B0015914C /* CapsuleTabs.swift */; };
 		861FFFE32832D7E60015914C /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FFFE22832D7E60015914C /* BottomCardView.swift */; };
 		861FFFE52832D84F0015914C /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FFFE42832D84F0015914C /* OnboardingButton.swift */; };
-		861FFFE8283317D00015914C /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FFFE7283317CF0015914C /* CustomTabView.swift */; };
 		86529615282EA91F00149D8E /* OnboardingScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86529614282EA91E00149D8E /* OnboardingScreens.swift */; };
+		865E7BEC2833460C008E1EAC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BEB2833460C008E1EAC /* MainTabView.swift */; };
+		865E7BF128334647008E1EAC /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BF028334647008E1EAC /* MapScreen.swift */; };
+		865E7BF32833465A008E1EAC /* UserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BF22833465A008E1EAC /* UserScreen.swift */; };
+		865E7BF52833466A008E1EAC /* HouseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BF42833466A008E1EAC /* HouseScreen.swift */; };
+		865E7BF728334678008E1EAC /* CreatePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BF628334678008E1EAC /* CreatePreview.swift */; };
+		865E7BF928334684008E1EAC /* ActivityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BF828334684008E1EAC /* ActivityScreen.swift */; };
+		865E7BFC2833DD72008E1EAC /* PlusCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BFB2833DD72008E1EAC /* PlusCircle.swift */; };
+		865E7BFE2833E908008E1EAC /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BFD2833E908008E1EAC /* MainRootView.swift */; };
+		865E7C002833ED05008E1EAC /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7BFF2833ED05008E1EAC /* Tab.swift */; };
+		865E7C0228373791008E1EAC /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7C0128373790008E1EAC /* EditProfileScreen.swift */; };
+		865E7C05283737E1008E1EAC /* FriendsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7C04283737E1008E1EAC /* FriendsScreen.swift */; };
+		865E7C0828373824008E1EAC /* NotificationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E7C0728373824008E1EAC /* NotificationsScreen.swift */; };
 		86607C8D282EC05000CAD8F5 /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86607C8C282EC05000CAD8F5 /* NameInputView.swift */; };
 		86607C8F2831561B00CAD8F5 /* UsernameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86607C8E2831561900CAD8F5 /* UsernameInputView.swift */; };
 		86607C9128315B3900CAD8F5 /* ProgramInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86607C9028315B3800CAD8F5 /* ProgramInputView.swift */; };
@@ -61,8 +72,19 @@
 		861FFFDF2832D72B0015914C /* CapsuleTabs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleTabs.swift; sourceTree = "<group>"; };
 		861FFFE22832D7E60015914C /* BottomCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
 		861FFFE42832D84F0015914C /* OnboardingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
-		861FFFE7283317CF0015914C /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		86529614282EA91E00149D8E /* OnboardingScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreens.swift; sourceTree = "<group>"; };
+		865E7BEB2833460C008E1EAC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		865E7BF028334647008E1EAC /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
+		865E7BF22833465A008E1EAC /* UserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreen.swift; sourceTree = "<group>"; };
+		865E7BF42833466A008E1EAC /* HouseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseScreen.swift; sourceTree = "<group>"; };
+		865E7BF628334678008E1EAC /* CreatePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePreview.swift; sourceTree = "<group>"; };
+		865E7BF828334684008E1EAC /* ActivityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityScreen.swift; sourceTree = "<group>"; };
+		865E7BFB2833DD72008E1EAC /* PlusCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCircle.swift; sourceTree = "<group>"; };
+		865E7BFD2833E908008E1EAC /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
+		865E7BFF2833ED05008E1EAC /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		865E7C0128373790008E1EAC /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
+		865E7C04283737E1008E1EAC /* FriendsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsScreen.swift; sourceTree = "<group>"; };
+		865E7C0728373824008E1EAC /* NotificationsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsScreen.swift; sourceTree = "<group>"; };
 		86607C8C282EC05000CAD8F5 /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		86607C8E2831561900CAD8F5 /* UsernameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameInputView.swift; sourceTree = "<group>"; };
 		86607C9028315B3800CAD8F5 /* ProgramInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInputView.swift; sourceTree = "<group>"; };
@@ -128,7 +150,13 @@
 		861FFFDC2832C7DE0015914C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				861FFFE7283317CF0015914C /* CustomTabView.swift */,
+				865E7BFD2833E908008E1EAC /* MainRootView.swift */,
+				865E7BFA2833DD60008E1EAC /* Tab Views */,
+				865E7BE9283345E8008E1EAC /* Map */,
+				865E7BEF28334623008E1EAC /* User */,
+				865E7BEE2833461B008E1EAC /* House */,
+				865E7BED28334612008E1EAC /* Create */,
+				865E7BEA283345F2008E1EAC /* Activity */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -158,6 +186,82 @@
 				861FFFDB2832C7AB0015914C /* Signup */,
 			);
 			path = "Onboarding ";
+			sourceTree = "<group>";
+		};
+		865E7BE9283345E8008E1EAC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				865E7BF028334647008E1EAC /* MapScreen.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		865E7BEA283345F2008E1EAC /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				865E7BF828334684008E1EAC /* ActivityScreen.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		865E7BED28334612008E1EAC /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				865E7BF628334678008E1EAC /* CreatePreview.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		865E7BEE2833461B008E1EAC /* House */ = {
+			isa = PBXGroup;
+			children = (
+				865E7BF42833466A008E1EAC /* HouseScreen.swift */,
+			);
+			path = House;
+			sourceTree = "<group>";
+		};
+		865E7BEF28334623008E1EAC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				865E7C092837382A008E1EAC /* Notifications */,
+				865E7C06283737E4008E1EAC /* Friends */,
+				865E7C0328373796008E1EAC /* Edit Profile */,
+				865E7BF22833465A008E1EAC /* UserScreen.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		865E7BFA2833DD60008E1EAC /* Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+				865E7BEB2833460C008E1EAC /* MainTabView.swift */,
+				865E7BFB2833DD72008E1EAC /* PlusCircle.swift */,
+			);
+			path = "Tab Views";
+			sourceTree = "<group>";
+		};
+		865E7C0328373796008E1EAC /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				865E7C0128373790008E1EAC /* EditProfileScreen.swift */,
+			);
+			path = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		865E7C06283737E4008E1EAC /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				865E7C04283737E1008E1EAC /* FriendsScreen.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		865E7C092837382A008E1EAC /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				865E7C0728373824008E1EAC /* NotificationsScreen.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		868FFB5D281736030081D07C = {
@@ -227,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				86D22102281ADC3000AFC1A9 /* User.swift */,
+				865E7BFF2833ED05008E1EAC /* Tab.swift */,
 				86D22104281ADCA700AFC1A9 /* School.swift */,
 			);
 			path = Model;
@@ -343,23 +448,34 @@
 				86D22103281ADC3000AFC1A9 /* User.swift in Sources */,
 				86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */,
 				861FFFD728327D210015914C /* AppDelegate.swift in Sources */,
+				865E7BFC2833DD72008E1EAC /* PlusCircle.swift in Sources */,
+				865E7BF52833466A008E1EAC /* HouseScreen.swift in Sources */,
+				865E7BF128334647008E1EAC /* MapScreen.swift in Sources */,
 				86607C93283187EE00CAD8F5 /* PhoneInputView.swift in Sources */,
 				86607C8F2831561B00CAD8F5 /* UsernameInputView.swift in Sources */,
+				865E7C0228373791008E1EAC /* EditProfileScreen.swift in Sources */,
+				865E7BF32833465A008E1EAC /* UserScreen.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
 				86D22105281ADCA700AFC1A9 /* School.swift in Sources */,
-				861FFFE8283317D00015914C /* CustomTabView.swift in Sources */,
 				861FFFE32832D7E60015914C /* BottomCardView.swift in Sources */,
 				86900E6828297BC1001442EA /* ImageSelectService.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
 				861FFFDE2832D7170015914C /* SchoolsScreen.swift in Sources */,
+				865E7BF928334684008E1EAC /* ActivityScreen.swift in Sources */,
+				865E7C05283737E1008E1EAC /* FriendsScreen.swift in Sources */,
 				861FFFE52832D84F0015914C /* OnboardingButton.swift in Sources */,
 				86607C9128315B3900CAD8F5 /* ProgramInputView.swift in Sources */,
 				861FFFE02832D72B0015914C /* CapsuleTabs.swift in Sources */,
 				86529615282EA91F00149D8E /* OnboardingScreens.swift in Sources */,
 				867CC4362831EDD800F31CC6 /* AuthService.swift in Sources */,
+				865E7BFE2833E908008E1EAC /* MainRootView.swift in Sources */,
 				86607C8D282EC05000CAD8F5 /* NameInputView.swift in Sources */,
+				865E7BF728334678008E1EAC /* CreatePreview.swift in Sources */,
 				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,
+				865E7BEC2833460C008E1EAC /* MainTabView.swift in Sources */,
+				865E7C002833ED05008E1EAC /* Tab.swift in Sources */,
+				865E7C0828373824008E1EAC /* NotificationsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
