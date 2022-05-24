@@ -12,7 +12,7 @@ struct User: Decodable, Hashable {
 
     
     let id: String
-    let dateCreated: [String] // Year [0], month [1], day [2], hour [3]
+//    let dateCreated: [String] // Year [0], month [1], day [2], hour [3]
     let name: String
     let username: String
     let program: String

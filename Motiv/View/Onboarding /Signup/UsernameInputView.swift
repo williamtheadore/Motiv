@@ -13,6 +13,7 @@ struct UsernameInputView: View {
     @State var username: String = "@"
     
     @EnvironmentObject var onboardingVM: OnboardingViewModel
+    @EnvironmentObject var authService: AuthService
     
     var body: some View {
         VStack(alignment: .center, spacing: 20){
@@ -33,7 +34,7 @@ struct UsernameInputView: View {
             
             // MARK: Textfield for users input
             // Requires focused to show keyboard upon appear
-            TextField("", text: $onboardingVM.username)
+            TextField("", text: $authService.username)
                 .focused($showKeyboard)
                 .font(.system(size: 36, weight: .bold))
                 .foregroundColor(.white)
@@ -47,6 +48,7 @@ struct UsernameInputView: View {
             NavigationLink(destination: {
                 SchoolsScreen()
                     .environmentObject(onboardingVM)
+                    .environmentObject(authService)
             }, label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)

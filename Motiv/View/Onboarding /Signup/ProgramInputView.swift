@@ -11,6 +11,7 @@ struct ProgramInputView: View {
     @FocusState private var showKeyboard: Bool
     
     @EnvironmentObject var onboardingVM: OnboardingViewModel
+    @EnvironmentObject var authService: AuthService
     
     var body: some View {
         VStack(alignment: .center, spacing: 20){
@@ -32,7 +33,7 @@ struct ProgramInputView: View {
             
             // MARK: Textfield for users input
             // Requires focused to show keyboard upon appear
-            TextField("", text: $onboardingVM.program)
+            TextField("", text: $authService.program)
                 .focused($showKeyboard)
                 .font(.system(size: 36, weight: .bold))
                 .foregroundColor(.white)
@@ -44,6 +45,7 @@ struct ProgramInputView: View {
             NavigationLink(destination: {
                 PhoneInputView()
                     .environmentObject(onboardingVM)
+                    .environmentObject(authService)
             }, label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)

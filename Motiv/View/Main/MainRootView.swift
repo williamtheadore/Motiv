@@ -10,29 +10,41 @@ import SwiftUI
 struct MainRootView: View {
     
     @EnvironmentObject var rootVM: RootViewModel
-        
+    
     var body: some View {
-        VStack {
+        ZStack {
             
-            // MARK: Screen determination used with Tab enumeration
-            switch rootVM.currentTab {
-            case .map: MapScreen()
-                    .environmentObject(rootVM)
-            case .activity: ActivityScreen()
-                    .environmentObject(rootVM)
-            case .create: CreatePreview()
-                self.blur(radius: 5)
-            case .house: HouseScreen()
-                    .environmentObject(rootVM)
-            case .user: UserScreen()
-                    .environmentObject(rootVM)
+            if !rootVM.inHouse {
+                
             }
-        
-            MainTabView()
-                .environmentObject(rootVM)
+            
+            VStack {
+                
+                // MARK: Screen determination used with Tab enumeration
+                switch rootVM.currentTab {
+                case .map: MapScreen()
+                        .blur(radius: rootVM.currentTab == .create  || rootVM.inHouse ? 3 : 0)
+                case .activity: ActivityScreen()
+                case .house: HouseScreen()
+                        .blur(radius: rootVM.currentTab == .create  || rootVM.inHouse ? 3 : 0)
+                case .user: UserScreen()
+                        .blur(radius: rootVM.currentTab == .create  || rootVM.inHouse ? 3 : 0)
+                default: MapScreen()
+                }
+                
+                MainTabView()
+            }
+            .environmentObject(rootVM)
+            .onAppear(perform: {
+                rootVM.statusCheck()
+            })
+            .task {
+                // MARK: Fetching user on background thread
+                await self.rootVM.fetchCurrentUser()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BG"))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BG"))
     }
 }
 

@@ -29,6 +29,8 @@ struct MainTabView: View {
                             .onTapGesture(perform: {
                                 self.rootVM.currentTab = .map
                             })
+                            .environmentObject(rootVM)
+
                         
                         Image(systemName: "calendar")
                             .resizable()
@@ -38,33 +40,43 @@ struct MainTabView: View {
                             .onTapGesture(perform: {
                                 self.rootVM.currentTab = .activity
                             })
+                            .environmentObject(rootVM)
+
                         
                         
-                        
+                        ZStack {
                             PlusCircle()
                                 .offset(y: -14)
                                 .onTapGesture(perform: {
                                     self.rootVM.currentTab = .create
                                 })
-                            
-                            Image(systemName: "house.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 23)
-                                .foregroundColor(Color("LightBlue"))
-                                .onTapGesture(perform: {
-                                    self.rootVM.currentTab = .house
-                                })
-                            
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 23)
-                                .foregroundColor(Color("LightBlue"))
-                                .onTapGesture(perform: {
-                                    self.rootVM.currentTab = .user
-                                })
                         }
+                            .environmentObject(rootVM)
+
+                        
+
+                        Image(systemName: "house.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 23)
+                            .foregroundColor(Color("LightBlue"))
+                            .onTapGesture(perform: {
+                                self.rootVM.currentTab = .house
+                            })
+                            .environmentObject(rootVM)
+
+                        
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 23)
+                            .foregroundColor(Color("LightBlue"))
+                            .onTapGesture(perform: {
+                                self.rootVM.currentTab = .user
+                            })
+                            .environmentObject(rootVM)
+
+                    }
                     .frame(width: UIScreen.main.bounds.maxX, height: 70)
                 }
             }

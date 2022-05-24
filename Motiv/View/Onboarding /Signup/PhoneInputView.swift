@@ -16,8 +16,7 @@ struct PhoneInputView: View {
     @State private var verCode: String = ""
     
     // MARK: Firebase Authorization Service
-    @StateObject private var authService = AuthService()
-    
+    @EnvironmentObject var authService: AuthService
     @EnvironmentObject var onboardingVM: OnboardingViewModel
     
     
@@ -30,10 +29,7 @@ struct PhoneInputView: View {
     
     // MARK: Signs user up
     func signup() {
-        
-        onboardingVM.dbSignUp()
         authService.signInWithPhone(verificationCode: verCode)
-        
     }
     
     // MARK: Filter to remove any none numerical characters in phone number
@@ -47,7 +43,7 @@ struct PhoneInputView: View {
     }
     
     var body: some View {
-        VStack(alignment: .center, spacing: 15){
+        VStack(alignment: .center, spacing: 15) {
             
             // MARK: Motiv Logo aligned at top
             Image("WhiteLogo")
@@ -106,7 +102,7 @@ struct PhoneInputView: View {
                             .foregroundColor(.white)
                     }
                     
-                    iPhoneNumberField(text: $onboardingVM.phoneNumber)
+                    iPhoneNumberField(text: $authService.phoneNumber)
                         .font(UIFont(size: 32, weight: .semibold, design: .default))
                         .foregroundColor(Color.white)
                         .focused($showKeyboard)
@@ -141,7 +137,7 @@ struct PhoneInputView: View {
                 .offset(y: smsSent ? 60 : 75)
 
             // MARK: Create Account Button
-            if onboardingVM.phoneNumber.count != 14 && !smsSent {
+            if authService.phoneNumber.count != 14 && !smsSent {
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)
                         .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)

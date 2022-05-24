@@ -23,6 +23,7 @@ struct SchoolsScreen: View {
     @State var school: String = ""
     
     @EnvironmentObject var onboardingVM: OnboardingViewModel
+    @EnvironmentObject var authService: AuthService
     
     func calculateWidth() -> CGFloat {
         
@@ -63,6 +64,7 @@ struct SchoolsScreen: View {
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .ignoresSafeArea()
                 .environmentObject(onboardingVM)
+                .environmentObject(authService)
             
             ForEach(schools.reversed()) { school in
                 
@@ -76,7 +78,7 @@ struct SchoolsScreen: View {
                                 // Queen's & SLC
                                 if school.index < 2 {
                                     self.schoolSelected.toggle()
-                                    onboardingVM.school = school.title
+                                    authService.school = school.title
                                 }
                             })
                         // MARK: Dynamic height dependent on index of school card

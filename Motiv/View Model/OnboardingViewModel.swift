@@ -27,18 +27,18 @@ class OnboardingViewModel: ObservableObject {
     
     func dbSignUp() {
         
+        print("TRYING TO SIGNUP USER IN FIRESTORE")
+        
         self.loading = true
         
         guard let uid = Auth.auth().currentUser?.uid else {
             print("Error retrieving user UID")
+            self.loading = false
             return
         }
-        
-        let currDate: Date = Date.now
-        
-        db.collection("users").document(uid).setData([
+                        
+        self.db.collection("users").document(uid).setData([
             "uid" : uid,
-            "dateCreated" : currDate,
             "fullName" : self.fullName,
             "username" : self.username,
             "school" : self.school,

@@ -7,6 +7,7 @@ struct BottomCardView: View {
     var school: String
     
     @EnvironmentObject var onboardingVM: OnboardingViewModel
+    @EnvironmentObject var authService: AuthService
     
     var body: some View {
         VStack(spacing: 20) {
@@ -29,6 +30,7 @@ struct BottomCardView: View {
             NavigationLink(destination: {
                 ProgramInputView()
                     .environmentObject(onboardingVM)
+                    .environmentObject(authService)
             }, label: {
                 OnboardingButton(buttonText: "Continue")
 
