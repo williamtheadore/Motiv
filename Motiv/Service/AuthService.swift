@@ -37,18 +37,19 @@ class AuthService: ObservableObject {
     func phoneAuth(phNo: String) {
         
         PhoneAuthProvider.provider()
-            .verifyPhoneNumber(phNo, uiDelegate: nil) { verificationID, error in
+            .verifyPhoneNumber("+1\(self.phoneNumber)", uiDelegate: nil) { verificationID, error in
                 if let error = error {
                     print("Error authorizing phone number: \(error.localizedDescription)")
                     return
                 }
                 
-                print("SMS Message Sent to \(phNo)")
+                print("SMS Message Sent to \(self.phoneNumber)")
                 UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
                 return
             }
     }
     
+    // MARK: FULL USER SIGNUP WITH AUTHENTICATION AND FIRESTORE
     func signInWithPhone(verificationCode: String) {
                 
         // MARK: Retrieves VerID from user defaults in case of app closure
@@ -64,7 +65,7 @@ class AuthService: ObservableObject {
             verificationCode: verificationCode
         )
         
-        
+        // MARK: Firebase Authentication Sign in
         Auth.auth().signIn(with: credential) { authResult, error in
             if let error = error {
                 print("Error signing in with phone number authentication: \(error.localizedDescription)")
@@ -80,14 +81,17 @@ class AuthService: ObservableObject {
                 self.loading = false
                 return
             }
-                            
+                         
+            // MARK: Firestore upload
             self.db.collection("users").document(uid).setData([
                 "uid" : uid,
                 "fullName" : self.fullName,
                 "username" : self.username,
                 "school" : self.school,
                 "program" : self.program,
-                "phoneNumber" : self.phoneNumber
+                "phoneNumber" : self.phoneNumber,
+                "houseID" : "",
+                "inHouse" : false
             ])
             
             self.signedIn = true

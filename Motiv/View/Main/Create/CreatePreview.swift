@@ -13,11 +13,10 @@ struct CreatePreview: View {
     
     var body: some View {
         VStack {
-            Text("Create View")
-            Button("Sign out") {
-                rootVM.signout()
-            }
+            
         }
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
     }
 }
 

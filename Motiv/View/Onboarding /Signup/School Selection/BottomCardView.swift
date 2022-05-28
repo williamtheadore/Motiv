@@ -20,7 +20,7 @@ struct BottomCardView: View {
                 Text("Join")
                     .font(.headline)
                     .foregroundColor(.white)
-                Text(" " + onboardingVM.school + "?")
+                Text(" " + authService.school + "?")
                     .fontWeight(.bold)
                     .font(.headline)
                     .foregroundColor(.white)

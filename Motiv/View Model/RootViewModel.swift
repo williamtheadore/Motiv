@@ -16,13 +16,14 @@ class RootViewModel: ObservableObject {
     @AppStorage("loading") var loading: Bool = false
     @AppStorage("onboardingComplete") var onboardingComplete: Bool = false
     @AppStorage("inHouse") var inHouse: Bool = false
-
+    
     // MARK: UI/UX Variables
     @Published var currentTab: Tab = .map
     @Published var userScreenLoading: Bool = false
+    @Published var displayHousePopup: Bool = false
 
     // MARK: Signed In User
-    @Published var signedInUser = User(id: "", name: "", username: "", program: "", school: "", friends: [], requests: [], houseUID: "", profilePhoto: "" )
+    @Published var signedInUser = User(id: "", name: "", username: "", program: "", school: "", friends: [], requests: [], houseUID: "", profilePhoto: "", inHouse: false)
     @Published var uid: String = ""
     
     
@@ -78,7 +79,9 @@ class RootViewModel: ObservableObject {
                                         friends: data?["friends"] as? [String] ?? [],
                                         requests: data?["requests"] as? [String] ?? [],
                                         houseUID: data?["houseUID"] as? String ?? "",
-                                        profilePhoto: data?["profilePhoto"] as? String ?? "")
+                                        profilePhoto: data?["profilePhoto"] as? String ?? "",
+                                        inHouse: data?["inHouse"] as? Bool ?? false
+                            )
                             
                             self.userScreenLoading = false
                         } else {

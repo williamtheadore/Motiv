@@ -55,7 +55,7 @@ struct PhoneInputView: View {
             
             // MARK: Caption Text
             if smsSent {
-                Text("Finish signing up by entering the code\nwe sent to +1 \(onboardingVM.phoneNumber)")
+                Text("Finish signing up by entering the code\nwe sent to +1 \(authService.phoneNumber)")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .font(.system(size: 18))

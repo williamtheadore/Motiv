@@ -18,6 +18,8 @@ struct HouseScreen: View {
                 rootVM.signout()
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
     }
 }
 

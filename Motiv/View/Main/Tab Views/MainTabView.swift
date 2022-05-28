@@ -13,18 +13,23 @@ struct MainTabView: View {
     
     var body: some View {
         GeometryReader { reader in
-            VStack {
-                Spacer()
+//            VStack {
+//                Spacer()
                 ZStack {
                     Rectangle()
                         .foregroundColor(.gray)
-                        .frame(width: UIScreen.main.bounds.maxX, height: 1)
+                        .frame(width: reader.size.width, height: 1)
                         .offset(y: -26)
+                    Rectangle()
+                        .frame(width: reader.size.width, height: 69)
+                        .foregroundColor(Color("BG"))
+                        .ignoresSafeArea()
+                        .offset(y: 10)
                     HStack(spacing: 40) {
                         Image(systemName: "map")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 23)
+                            .frame(height: 20)
                             .foregroundColor(Color("LightBlue"))
                             .onTapGesture(perform: {
                                 self.rootVM.currentTab = .map
@@ -35,7 +40,7 @@ struct MainTabView: View {
                         Image(systemName: "calendar")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 23)
+                            .frame(height: 20)
                             .foregroundColor(Color("LightBlue"))
                             .onTapGesture(perform: {
                                 self.rootVM.currentTab = .activity
@@ -58,7 +63,7 @@ struct MainTabView: View {
                         Image(systemName: "house.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 23)
+                            .frame(height: 20)
                             .foregroundColor(Color("LightBlue"))
                             .onTapGesture(perform: {
                                 self.rootVM.currentTab = .house
@@ -69,7 +74,7 @@ struct MainTabView: View {
                         Image(systemName: "person.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 23)
+                            .frame(height: 20)
                             .foregroundColor(Color("LightBlue"))
                             .onTapGesture(perform: {
                                 self.rootVM.currentTab = .user
@@ -79,8 +84,9 @@ struct MainTabView: View {
                     }
                     .frame(width: UIScreen.main.bounds.maxX, height: 70)
                 }
-            }
-            .padding(.bottom, 20)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+//            }
+            .padding(.bottom, 10)
             .edgesIgnoringSafeArea(.bottom)
             
         }

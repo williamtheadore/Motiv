@@ -16,7 +16,7 @@ struct UserScreen: View {
         case house
     }
     
-    @State var user  = User(id: "", name: "", username: "", program: "", school: "", friends: [], requests: [], houseUID: "", profilePhoto: "")
+    @State var user  = User(id: "", name: "", username: "", program: "", school: "", friends: [], requests: [], houseUID: "", profilePhoto: "", inHouse: false)
     
     @State private var currentTab: UserTab = .grid
     
@@ -63,7 +63,7 @@ struct UserScreen: View {
                     })
                     
                 }
-                .padding(.top, 7.5)
+                .padding(.top, 10)
                 .padding(.bottom, 20)
                 
                 
@@ -148,7 +148,7 @@ struct UserScreen: View {
                         Text("@\(rootVM.signedInUser.username)")
                             .foregroundColor(.gray)
                     }
-                    .padding(.horizontal, 15)
+                    .padding(.horizontal, 20)
                     
                     Spacer()
                     
@@ -162,7 +162,7 @@ struct UserScreen: View {
                         Text(rootVM.signedInUser.program)
                             .foregroundColor(.gray)
                     }
-                    .padding(.horizontal, 15)
+                    .padding(.horizontal, 20)
                     
                 }
                 
@@ -171,17 +171,16 @@ struct UserScreen: View {
                     EditProfileScreen()
                 }, label: {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 5)
-                            .frame(width: UIScreen.main.bounds.maxX - 25, height: 35)
-                            .foregroundColor(.white)
-                        RoundedRectangle(cornerRadius: 5)
-                            .frame(width: UIScreen.main.bounds.maxX - 26, height: 34)
-                            .foregroundColor(Color("BG"))
                         Text("Edit Profile")
                             .foregroundColor(.white)
                             .font(.footnote)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.white, lineWidth: 1)
+                                    .frame(width: UIScreen.main.bounds.maxX - 26, height: 34)
+                            )
                     }
-                    .padding(.vertical, 15)
+                    .padding(.vertical, 20)
                 })
                 
                 
@@ -190,6 +189,7 @@ struct UserScreen: View {
                     .foregroundColor(.white)
                     .fontWeight(.light)
                 
+                // MARK: Grid or House View Selection
                 HStack {
                     VStack {
                         Button(action: {
@@ -199,6 +199,8 @@ struct UserScreen: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20)
+                                .foregroundColor(.white)
+
                         })
                         
                         GeometryReader { reader in
@@ -210,7 +212,6 @@ struct UserScreen: View {
                         }
                     }
                     
-                    // MARK: Grid or House View Selection
                     VStack {
                         Button(action: {
                             self.currentTab = .house
@@ -219,6 +220,7 @@ struct UserScreen: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20)
+                                .foregroundColor(.white)
                         })
                         
                         GeometryReader { reader in
@@ -229,29 +231,16 @@ struct UserScreen: View {
                             }
                         }
                     }
-                    .padding(.vertical)
                 }
+                .padding(.top, 10)
             }
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(true)
         }
     }
 }
 
-struct GeometryReaderCentered<Content: View>: View {
-    var content: (GeometryProxy) -> Content
 
-    var body: some View {
-        GeometryReader { geometry in
-            Group {
-                content(geometry)
-            }
-            .frame(
-                width: geometry.size.width,
-                height: geometry.size.height,
-                alignment: .center
-            )
-        }
-    }
-}
 
 struct UserScreen_Previews: PreviewProvider {
     static var previews: some View {

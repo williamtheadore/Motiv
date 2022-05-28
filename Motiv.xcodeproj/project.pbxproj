@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8612A206283D5B0D00BCCD8B /* HouseOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8612A205283D5B0C00BCCD8B /* HouseOptionView.swift */; };
 		861FFFD728327D210015914C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FFFD628327D210015914C /* AppDelegate.swift */; };
 		861FFFDA2832B9FA0015914C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 861FFFD92832B9FA0015914C /* GoogleService-Info.plist */; };
 		861FFFDE2832D7170015914C /* SchoolsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861FFFDD2832D7170015914C /* SchoolsScreen.swift */; };
@@ -57,6 +58,8 @@
 		86900E6028284FE6001442EA /* AlgoliaSearchClient in Frameworks */ = {isa = PBXBuildFile; productRef = 86900E5F28284FE6001442EA /* AlgoliaSearchClient */; };
 		86900E6528287E71001442EA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 86900E6428287E71001442EA /* SDWebImageSwiftUI */; };
 		86900E6828297BC1001442EA /* ImageSelectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86900E6728297BC1001442EA /* ImageSelectService.swift */; };
+		8691FEB42842AF6A00B9F931 /* HouseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691FEB32842AF6A00B9F931 /* HouseViewModel.swift */; };
+		8691FEB62842B0A600B9F931 /* HouseOptionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691FEB52842B0A600B9F931 /* HouseOptionSheetView.swift */; };
 		86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22100281A23A700AFC1A9 /* RootViewModel.swift */; };
 		86D22103281ADC3000AFC1A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22102281ADC3000AFC1A9 /* User.swift */; };
 		86D22105281ADCA700AFC1A9 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22104281ADCA700AFC1A9 /* School.swift */; };
@@ -64,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8612A205283D5B0C00BCCD8B /* HouseOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseOptionView.swift; sourceTree = "<group>"; };
 		861FFFD52831F4A30015914C /* Motiv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Motiv.entitlements; sourceTree = "<group>"; };
 		861FFFD628327D210015914C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		861FFFD828328CDE0015914C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 		868FFB70281736070081D07C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		868FFB85281760650081D07C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		86900E6728297BC1001442EA /* ImageSelectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectService.swift; sourceTree = "<group>"; };
+		8691FEB32842AF6A00B9F931 /* HouseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewModel.swift; sourceTree = "<group>"; };
+		8691FEB52842B0A600B9F931 /* HouseOptionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseOptionSheetView.swift; sourceTree = "<group>"; };
 		86D22100281A23A700AFC1A9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		86D22102281ADC3000AFC1A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86D22104281ADCA700AFC1A9 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
@@ -134,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8612A204283D5ADC00BCCD8B /* Create House */ = {
+			isa = PBXGroup;
+			children = (
+				8691FEB52842B0A600B9F931 /* HouseOptionSheetView.swift */,
+				8612A205283D5B0C00BCCD8B /* HouseOptionView.swift */,
+			);
+			path = "Create House";
+			sourceTree = "<group>";
+		};
 		861FFFDB2832C7AB0015914C /* Signup */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +230,7 @@
 		865E7BEE2833461B008E1EAC /* House */ = {
 			isa = PBXGroup;
 			children = (
+				8612A204283D5ADC00BCCD8B /* Create House */,
 				865E7BF42833466A008E1EAC /* HouseScreen.swift */,
 			);
 			path = House;
@@ -323,6 +339,7 @@
 				868FFB85281760650081D07C /* OnboardingViewModel.swift */,
 				86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */,
 				86D22100281A23A700AFC1A9 /* RootViewModel.swift */,
+				8691FEB32842AF6A00B9F931 /* HouseViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -445,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8691FEB42842AF6A00B9F931 /* HouseViewModel.swift in Sources */,
 				86D22103281ADC3000AFC1A9 /* User.swift in Sources */,
 				86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */,
 				861FFFD728327D210015914C /* AppDelegate.swift in Sources */,
@@ -453,6 +471,7 @@
 				865E7BF128334647008E1EAC /* MapScreen.swift in Sources */,
 				86607C93283187EE00CAD8F5 /* PhoneInputView.swift in Sources */,
 				86607C8F2831561B00CAD8F5 /* UsernameInputView.swift in Sources */,
+				8612A206283D5B0D00BCCD8B /* HouseOptionView.swift in Sources */,
 				865E7C0228373791008E1EAC /* EditProfileScreen.swift in Sources */,
 				865E7BF32833465A008E1EAC /* UserScreen.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
@@ -465,6 +484,7 @@
 				865E7C05283737E1008E1EAC /* FriendsScreen.swift in Sources */,
 				861FFFE52832D84F0015914C /* OnboardingButton.swift in Sources */,
 				86607C9128315B3900CAD8F5 /* ProgramInputView.swift in Sources */,
+				8691FEB62842B0A600B9F931 /* HouseOptionSheetView.swift in Sources */,
 				861FFFE02832D72B0015914C /* CapsuleTabs.swift in Sources */,
 				86529615282EA91F00149D8E /* OnboardingScreens.swift in Sources */,
 				867CC4362831EDD800F31CC6 /* AuthService.swift in Sources */,

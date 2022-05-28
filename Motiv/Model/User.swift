@@ -21,5 +21,6 @@ struct User: Decodable, Hashable {
     let requests: [String]
     let houseUID: String
     let profilePhoto: String
+    let inHouse: Bool
     
 }
