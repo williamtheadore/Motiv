@@ -64,6 +64,7 @@
 		86D22103281ADC3000AFC1A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22102281ADC3000AFC1A9 /* User.swift */; };
 		86D22105281ADCA700AFC1A9 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22104281ADCA700AFC1A9 /* School.swift */; };
 		86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */; };
+		DA443CAA28456F9200D06126 /* BarEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA443CA928456F9200D06126 /* BarEventPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		86D22102281ADC3000AFC1A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86D22104281ADCA700AFC1A9 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingViewModel.swift; sourceTree = "<group>"; };
+		DA443CA928456F9200D06126 /* BarEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEventPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				865E7BFD2833E908008E1EAC /* MainRootView.swift */,
+				DA443CA928456F9200D06126 /* BarEventPreview.swift */,
 				865E7BFA2833DD60008E1EAC /* Tab Views */,
 				865E7BE9283345E8008E1EAC /* Map */,
 				865E7BEF28334623008E1EAC /* User */,
@@ -466,6 +469,7 @@
 				86D22103281ADC3000AFC1A9 /* User.swift in Sources */,
 				86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */,
 				861FFFD728327D210015914C /* AppDelegate.swift in Sources */,
+				DA443CAA28456F9200D06126 /* BarEventPreview.swift in Sources */,
 				865E7BFC2833DD72008E1EAC /* PlusCircle.swift in Sources */,
 				865E7BF52833466A008E1EAC /* HouseScreen.swift in Sources */,
 				865E7BF128334647008E1EAC /* MapScreen.swift in Sources */,
