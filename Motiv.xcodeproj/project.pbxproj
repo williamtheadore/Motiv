@@ -66,6 +66,7 @@
 		86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */; };
 		DA443CAA28456F9200D06126 /* BarEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA443CA928456F9200D06126 /* BarEventPreview.swift */; };
 		DAC19D7D2846A37500D6A19E /* HousePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D7C2846A37500D6A19E /* HousePreview.swift */; };
+		DAC19D7F2846A91800D6A19E /* HosteeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D7E2846A91800D6A19E /* HosteeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingViewModel.swift; sourceTree = "<group>"; };
 		DA443CA928456F9200D06126 /* BarEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEventPreview.swift; sourceTree = "<group>"; };
 		DAC19D7C2846A37500D6A19E /* HousePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousePreview.swift; sourceTree = "<group>"; };
+		DAC19D7E2846A91800D6A19E /* HosteeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosteeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				865E7BFD2833E908008E1EAC /* MainRootView.swift */,
 				DA443CA928456F9200D06126 /* BarEventPreview.swift */,
 				DAC19D7C2846A37500D6A19E /* HousePreview.swift */,
+				DAC19D7E2846A91800D6A19E /* HosteeView.swift */,
 				865E7BFA2833DD60008E1EAC /* Tab Views */,
 				865E7BE9283345E8008E1EAC /* Map */,
 				865E7BEF28334623008E1EAC /* User */,
@@ -496,6 +499,7 @@
 				86529615282EA91F00149D8E /* OnboardingScreens.swift in Sources */,
 				867CC4362831EDD800F31CC6 /* AuthService.swift in Sources */,
 				865E7BFE2833E908008E1EAC /* MainRootView.swift in Sources */,
+				DAC19D7F2846A91800D6A19E /* HosteeView.swift in Sources */,
 				86607C8D282EC05000CAD8F5 /* NameInputView.swift in Sources */,
 				865E7BF728334678008E1EAC /* CreatePreview.swift in Sources */,
 				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
