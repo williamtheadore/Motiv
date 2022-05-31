@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BarEventPreview: View {
+    @State private var interestedUsers = IndexingViewModel().dummyUsers
+
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -26,7 +28,6 @@ struct BarEventPreview: View {
                 }
                 .frame(width: geo.size.width, height: geo.size.height * 0.25, alignment: .top)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-                
 
                 // Event Info
                 HStack {
@@ -42,11 +43,11 @@ struct BarEventPreview: View {
                     VStack(spacing: 0) {
                         Text("13")
                             .foregroundColor(.black)
-                            .font(.title.bold())
+                            .font(.title.weight(.medium))
 
                         Divider()
                             .padding(.vertical, 3)
-                        
+
                         Text("MAY")
                             .foregroundColor(.secondary)
                             .font(.body.weight(.light))
@@ -63,26 +64,33 @@ struct BarEventPreview: View {
                 // Friends
                 HStack {
                     HStack(spacing: -15) {
-                        ForEach(0 ... 3, id: \.self) { _ in
+                        ForEach(0 ... 3, id: \.self) { num in
                             Button {} label: {
-                                Image(systemName: "person.crop.circle.fill")
-                                    .resizable()
-                                    .frame(width: 35, height: 35)
-                                    .background(Color("CircleBorder"))
-                                    .scaledToFill()
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(.black))
+                                AsyncImage(url: URL(string: interestedUsers[num].profilePhoto)) { phase in
+                                    if let image = phase.image {
+                                        image.resizable() // Displays the loaded image.
+                                    } else if phase.error != nil {
+                                        Color.red // Indicates an error.
+                                    } else {
+                                        Color.white
+                                    }
+                                }
+                                .frame(width: 30, height: 30)
+                                .background(.clear)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(.black))
                             }
                         }
 
-                        Text("+16")
+                        Text("+\(interestedUsers.count-4)")
                             .padding(5)
-                            .frame(width: 35, height: 35)
+                            .frame(width: 30, height: 30)
                             .background(.white)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(.blue))
                             .foregroundColor(.black)
-                            .font(.caption)
+                            .font(.caption2)
                     }
 
 //                    Spacer()
