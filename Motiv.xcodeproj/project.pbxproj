@@ -65,6 +65,7 @@
 		86D22105281ADCA700AFC1A9 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22104281ADCA700AFC1A9 /* School.swift */; };
 		86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */; };
 		DA443CAA28456F9200D06126 /* BarEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA443CA928456F9200D06126 /* BarEventPreview.swift */; };
+		DAC19D7D2846A37500D6A19E /* HousePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D7C2846A37500D6A19E /* HousePreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		86D22104281ADCA700AFC1A9 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingViewModel.swift; sourceTree = "<group>"; };
 		DA443CA928456F9200D06126 /* BarEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEventPreview.swift; sourceTree = "<group>"; };
+		DAC19D7C2846A37500D6A19E /* HousePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousePreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				865E7BFD2833E908008E1EAC /* MainRootView.swift */,
 				DA443CA928456F9200D06126 /* BarEventPreview.swift */,
+				DAC19D7C2846A37500D6A19E /* HousePreview.swift */,
 				865E7BFA2833DD60008E1EAC /* Tab Views */,
 				865E7BE9283345E8008E1EAC /* Map */,
 				865E7BEF28334623008E1EAC /* User */,
@@ -496,6 +499,7 @@
 				86607C8D282EC05000CAD8F5 /* NameInputView.swift in Sources */,
 				865E7BF728334678008E1EAC /* CreatePreview.swift in Sources */,
 				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
+				DAC19D7D2846A37500D6A19E /* HousePreview.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,
 				865E7BEC2833460C008E1EAC /* MainTabView.swift in Sources */,
 				865E7C002833ED05008E1EAC /* Tab.swift in Sources */,
