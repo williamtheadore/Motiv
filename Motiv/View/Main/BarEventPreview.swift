@@ -20,7 +20,7 @@ struct BarEventPreview: View {
                         .resizable()
                         .scaledToFill()
 
-                    Button {} label: {
+                    Button { Void() } label: {
                         Image(systemName: "xmark")
                             .padding()
                             .foregroundColor(.black)
@@ -65,10 +65,10 @@ struct BarEventPreview: View {
 
                 // Friends
                 HStack {
-                    HStack(spacing: -15) {
-                        ForEach(0 ... 3, id: \.self) { num in
-                            Button {} label: {
-                                AsyncImage(url: URL(string: interestedUsers[num].profilePhoto)) { phase in
+                    Button { Void() } label: {
+                        HStack(spacing: -15) {
+                            ForEach(interestedUsers.prefix(4), id: \.self) { user in
+                                AsyncImage(url: URL(string: user.profilePhoto)) { phase in
                                     if let image = phase.image {
                                         image.resizable()
                                     } else {
@@ -81,21 +81,20 @@ struct BarEventPreview: View {
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(.black))
                             }
-                        }
 
-                        if interestedUsers.count - 4 > 0 {
-                            Text("+\(interestedUsers.count - 4)")
-                                .padding(5)
-                                .frame(width: 30, height: 30)
-                                .background(.white)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(.blue))
-                                .foregroundColor(.black)
-                                .font(.caption2)
+                            if interestedUsers.count - 4 > 0 {
+                                Text("+\(interestedUsers.count - 4)")
+                                    .padding(5)
+                                    .frame(width: 30, height: 30)
+                                    .background(.white)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(.blue))
+                                    .foregroundColor(.black)
+                                    .font(.caption2)
+                            }
                         }
                     }
 
-//                    Spacer()
                     Text("Friends interested")
                         .font(.body.bold())
                     Spacer()
@@ -105,7 +104,7 @@ struct BarEventPreview: View {
                 // Buttons
                 // TODO: Connect buttons
                 HStack(spacing: 15) {
-                    Button("Going") {}
+                    Button("Going") { Void() }
                         .frame(width: geo.size.width * 0.45)
                         .padding(.vertical, 10)
                         .background(Color("Blue").opacity(0.6))
@@ -113,7 +112,7 @@ struct BarEventPreview: View {
                         .font(.body.bold())
                         .foregroundColor(Color("LightBlue"))
 
-                    Button("Interested") {}
+                    Button("Interested") { Void() }
                         .frame(width: geo.size.width * 0.45)
                         .padding(.vertical, 10)
                         .background(.white)

@@ -17,7 +17,7 @@ struct HousePreview: View {
                         .resizable()
                         .scaledToFill()
 
-                    Button {} label: {
+                    Button { Void() } label: { //TODO: Connect button
                         Image(systemName: "chevron.down")
                             .padding()
                             .foregroundColor(.white)
@@ -72,7 +72,7 @@ struct HousePreview: View {
                 // Buttons
                 // TODO: Connect buttons
                 HStack(spacing: 15) {
-                    Button("Visit") {}
+                    Button("Visit") { Void() }
                         .frame(width: geo.size.width * 0.45)
                         .padding(.vertical, 10)
                         .background(Color("Blue").opacity(0.6))
@@ -80,7 +80,7 @@ struct HousePreview: View {
                         .font(.body.bold())
                         .foregroundColor(Color("LightBlue"))
 
-                    Button("Follow") {}
+                    Button("Follow") { Void() }
                         .frame(width: geo.size.width * 0.45)
                         .padding(.vertical, 10)
                         .background(Color("Blue"))

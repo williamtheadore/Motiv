@@ -13,7 +13,7 @@ struct UserDropDownMenu: View {
 
     var body: some View {
         VStack {
-            Button {} label: {
+            Button { Void() } label: {
                 Image(systemName: "chevron.down")
                     .font(.system(size: 40, weight: .thin))
             }
