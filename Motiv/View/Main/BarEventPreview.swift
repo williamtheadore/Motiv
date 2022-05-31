@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BarEventPreview: View {
+    // TODO: Retrieve interested users from db
     @State private var interestedUsers = IndexingViewModel().dummyUsers
 
     var body: some View {
@@ -15,7 +16,7 @@ struct BarEventPreview: View {
             VStack {
                 // Image and X
                 ZStack(alignment: .topTrailing) {
-                    Image("queenscampus")
+                    Image("queenscampus") // TODO: Get image from database
                         .resizable()
                         .scaledToFill()
 
@@ -30,6 +31,7 @@ struct BarEventPreview: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
 
                 // Event Info
+                // TODO: Populate from database
                 HStack {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Ritual")
@@ -68,9 +70,7 @@ struct BarEventPreview: View {
                             Button {} label: {
                                 AsyncImage(url: URL(string: interestedUsers[num].profilePhoto)) { phase in
                                     if let image = phase.image {
-                                        image.resizable() // Displays the loaded image.
-                                    } else if phase.error != nil {
-                                        Color.red // Indicates an error.
+                                        image.resizable()
                                     } else {
                                         Color.white
                                     }
@@ -83,14 +83,16 @@ struct BarEventPreview: View {
                             }
                         }
 
-                        Text("+\(interestedUsers.count-4)")
-                            .padding(5)
-                            .frame(width: 30, height: 30)
-                            .background(.white)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(.blue))
-                            .foregroundColor(.black)
-                            .font(.caption2)
+                        if interestedUsers.count - 4 > 0 {
+                            Text("+\(interestedUsers.count - 4)")
+                                .padding(5)
+                                .frame(width: 30, height: 30)
+                                .background(.white)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(.blue))
+                                .foregroundColor(.black)
+                                .font(.caption2)
+                        }
                     }
 
 //                    Spacer()
@@ -101,6 +103,7 @@ struct BarEventPreview: View {
                 .padding(.horizontal)
 
                 // Buttons
+                // TODO: Connect buttons
                 HStack(spacing: 15) {
                     Button("Going") {}
                         .frame(width: geo.size.width * 0.45)
