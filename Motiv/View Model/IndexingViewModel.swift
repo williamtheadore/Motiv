@@ -95,7 +95,7 @@ class IndexingViewModel: ObservableObject {
     }
     
     
-    // MARK: Dummy Users for Testing Purposes
+    // MARK: Hard Coded Dummy Users for Testing Purposes
     let dummyUsers: [User] = [
         User(id: UUID().uuidString, name: "John Doe", username: "jDoe", program: "Economics", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_1.jpeg?alt=media&token=1e85f082-dfe6-48ca-94d4-f4f615ed53cc", inHouse: false),
         User(id: UUID().uuidString, name: "Dylan Brown", username: "Brown23", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_2.jpeg?alt=media&token=1d42756a-4442-42b5-a963-508963deec0d", inHouse: false),
@@ -105,8 +105,8 @@ class IndexingViewModel: ObservableObject {
         User(id: UUID().uuidString, name: "Tyler Dawn", username: "TDog", program: "Sociology", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_6.jpeg?alt=media&token=90257e6a-bbcc-49c1-bdc1-016c952903fe", inHouse: false),
         User(id: UUID().uuidString, name: "Heet Kantaria", username: "Heet", program: "Economics", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_7.jpeg?alt=media&token=953361b3-0255-47d8-b713-2692f82a5d18", inHouse: false),
         User(id: UUID().uuidString, name: "Will", username: "bigwilly", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_8.jpeg?alt=media&token=a4401a6c-6412-40dd-a2ef-9c6d992cbd28", inHouse: false),
-        User(id: UUID().uuidString, name: "Sarah Cameron", username: "johnnysins", program: "Communications", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_9.jpeg?alt=media&token=ca71b62b-69f3-48ab-8454-9d49ef44ccc4", inHouse: false),
-        User(id: UUID().uuidString, name: "John B", username: "sarahcameron", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_10.jpeg?alt=media&token=bd059d18-f1d7-4d9e-8018-4ff456974cbd", inHouse: false)
+        User(id: UUID().uuidString, name: "Lily", username: "lilyyy", program: "Communications", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_9.jpeg?alt=media&token=ca71b62b-69f3-48ab-8454-9d49ef44ccc4", inHouse: false),
+        User(id: UUID().uuidString, name: "John B", username: "johnb", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_10.jpeg?alt=media&token=bd059d18-f1d7-4d9e-8018-4ff456974cbd", inHouse: false)
     ]
     
     // MARK: Searches users stored in Algolia User Index
