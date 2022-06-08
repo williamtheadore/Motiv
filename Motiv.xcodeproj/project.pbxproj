@@ -71,6 +71,12 @@
 		86D22103281ADC3000AFC1A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22102281ADC3000AFC1A9 /* User.swift */; };
 		86D22105281ADCA700AFC1A9 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22104281ADCA700AFC1A9 /* School.swift */; };
 		86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */; };
+activity-view
+		DA1A9415285008F00091138B /* ActivitySortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A9414285008F00091138B /* ActivitySortButton.swift */; };
+		DA1A9417285014E90091138B /* HouseEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A9416285014E90091138B /* HouseEventPreview.swift */; };
+		DA443CAA28456F9200D06126 /* BarEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA443CA928456F9200D06126 /* BarEventPreview.swift */; };
+
+main
 		DAC19D7D2846A37500D6A19E /* HousePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D7C2846A37500D6A19E /* HousePreview.swift */; };
 		DAC19D7F2846A91800D6A19E /* HosteeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D7E2846A91800D6A19E /* HosteeView.swift */; };
 		DAC19D812846B39500D6A19E /* UserDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */; };
@@ -125,6 +131,12 @@
 		86D22102281ADC3000AFC1A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86D22104281ADCA700AFC1A9 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		86D937FB28221C85006EB0E4 /* IndexingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingViewModel.swift; sourceTree = "<group>"; };
+activity-view
+		DA1A9414285008F00091138B /* ActivitySortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySortButton.swift; sourceTree = "<group>"; };
+		DA1A9416285014E90091138B /* HouseEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseEventPreview.swift; sourceTree = "<group>"; };
+		DA443CA928456F9200D06126 /* BarEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEventPreview.swift; sourceTree = "<group>"; };
+
+main
 		DAC19D7C2846A37500D6A19E /* HousePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousePreview.swift; sourceTree = "<group>"; };
 		DAC19D7E2846A91800D6A19E /* HosteeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosteeView.swift; sourceTree = "<group>"; };
 		DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDropDownMenu.swift; sourceTree = "<group>"; };
@@ -186,6 +198,10 @@
 		861FFFDC2832C7DE0015914C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+activity-view
+				865E7BFD2833E908008E1EAC /* MainRootView.swift */,
+
+main
 				DAC19D7C2846A37500D6A19E /* HousePreview.swift */,
 				DAC19D7E2846A91800D6A19E /* HosteeView.swift */,
 				DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */,
@@ -239,6 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				865E7BF828334684008E1EAC /* ActivityScreen.swift */,
+				DA1A9416285014E90091138B /* HouseEventPreview.swift */,
+				DA443CA928456F9200D06126 /* BarEventPreview.swift */,
+				DA1A9414285008F00091138B /* ActivitySortButton.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -518,7 +537,12 @@
 				865E7BF128334647008E1EAC /* MapScreen.swift in Sources */,
 				86607C93283187EE00CAD8F5 /* PhoneInputView.swift in Sources */,
 				86607C8F2831561B00CAD8F5 /* UsernameInputView.swift in Sources */,
+activity-view
+				DA1A9415285008F00091138B /* ActivitySortButton.swift in Sources */,
+				8612A206283D5B0D00BCCD8B /* HouseOptionView.swift in Sources */,
+
 				867F36A4284BA59500F03C63 /* AddHousematesScreen.swift in Sources */,
+main
 				865E7C0228373791008E1EAC /* EditProfileScreen.swift in Sources */,
 				865E7BF32833465A008E1EAC /* UserScreen.swift in Sources */,
 				868FFB6C281736030081D07C /* RootView.swift in Sources */,
@@ -526,6 +550,7 @@
 				861FFFE32832D7E60015914C /* BottomCardView.swift in Sources */,
 				867F36AA284F9DFB00F03C63 /* LocationManager.swift in Sources */,
 				86900E6828297BC1001442EA /* ImageSelectService.swift in Sources */,
+				DA1A9417285014E90091138B /* HouseEventPreview.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
 				8604D4912849294E0063B11E /* Organization.swift in Sources */,
 				861FFFDE2832D7170015914C /* SchoolsScreen.swift in Sources */,
