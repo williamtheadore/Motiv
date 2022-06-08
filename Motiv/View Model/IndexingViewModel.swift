@@ -92,6 +92,7 @@ class IndexingViewModel: ObservableObject {
     init() {
         self.client = SearchClient(appID: "NAW4Z6IS9L", apiKey: "35451fd87ebb6dbbf8bf2e74633a7521")
         self.userIndex = client.index(withName: "w-little_motivapp_users")
+        
     }
     
     
