@@ -35,20 +35,25 @@ struct MainRootView: View {
                 MainTabView()
                     .frame(maxHeight: .infinity, alignment: .bottom)
                 
-                
-                if rootVM.displayHousePopup {
-                    HouseOptionView()
-                    
+        
+            }
+            .sheet(isPresented: $houseVM.displayHouseOnboarding) {
+                       
+            } content: {
+                NavigationView {
+                    HouseOptionSheetView()
+                        .environmentObject(houseVM)
                 }
             }
-            .sheet(isPresented: $rootVM.displayHousePopup) {
-                        HouseOptionSheetView()
-                    }
                 .environmentObject(rootVM)
                 .onAppear(perform: {
+                    
+                    // MARK: Determine user sign in status
                     rootVM.statusCheck()
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                        rootVM.displayHousePopup = houseVM.determineInHouse()
+                        // MARK: Will display house options 5 seconds after appearing if user is not in house
+                        houseVM.determineInHouse()
                     }
                 })
                 .task {
@@ -58,7 +63,6 @@ struct MainRootView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BG"))
                 
-//                HouseOptionView()
         }
     }
 }

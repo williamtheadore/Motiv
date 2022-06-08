@@ -12,17 +12,17 @@ import SwiftUI
 class HouseViewModel: ObservableObject {
     
     @Published var createHouseName: String = ""
-    @Published var houseType: String = ""
+    @Published var createHouseType: String = ""
     @Published var housemates: [String] = []
     @Published var friendsOnlyDisplay: Bool = true
+    @Published var displayHouseOnboarding: Bool = false
     
     @AppStorage("signedIn") var signedIn: Bool = true
+    @AppStorage("displayHouseOnboarding") var alreadyDisplayedOnboarding: Bool = false
     
     // MARK: Determines if a user belongs to a house
-    func determineInHouse() -> Bool {
-        
-        var inHouseCheck: Bool = false
-                
+    func determineInHouse() {
+                        
         if let uid = Auth.auth().currentUser?.uid {
             Firestore.firestore().collection("users").document(uid).getDocument { doc, err in
                 if let err = err {
@@ -33,7 +33,15 @@ class HouseViewModel: ObservableObject {
                     
                     // MARK: Only true if user belongs to house
                     if let inHouse = data!["inHouse"] {
-                        inHouseCheck = inHouse as? Bool ?? false
+                        if inHouse as? Bool ?? false == true {
+                            print("House onboarding not required")
+                            self.displayHouseOnboarding = false
+                            return
+                        }
+                    } else {
+                        if !self.alreadyDisplayedOnboarding {
+                            self.displayHouseOnboarding = true
+                        }
                     }
                 }
             }
@@ -42,8 +50,10 @@ class HouseViewModel: ObservableObject {
             self.signedIn = false
         }
         
-        return inHouseCheck
-        
+//        if !self.alreadyDisplayedOnboarding {
+            self.displayHouseOnboarding = true
+            print("Displaying house onboarding")
+//        }
     }
     
 }
