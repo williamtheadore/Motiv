@@ -57,6 +57,9 @@
 		867F36A4284BA59500F03C63 /* AddHousematesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F36A3284BA59500F03C63 /* AddHousematesScreen.swift */; };
 		867F36A8284F9CE700F03C63 /* SearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F36A7284F9CE600F03C63 /* SearchLocationView.swift */; };
 		867F36AA284F9DFB00F03C63 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F36A9284F9DFB00F03C63 /* LocationManager.swift */; };
+		867F36AC28512E8500F03C63 /* ActivitySortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F36AB28512E8400F03C63 /* ActivitySortButton.swift */; };
+		867F36AE28512EAF00F03C63 /* BarEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F36AD28512EAF00F03C63 /* BarEventPreview.swift */; };
+		867F36B028512F0F00F03C63 /* HouseEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F36AF28512F0E00F03C63 /* HouseEventPreview.swift */; };
 		868FFB6A281736030081D07C /* MotivApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB69281736030081D07C /* MotivApp.swift */; };
 		868FFB6C281736030081D07C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FFB6B281736030081D07C /* RootView.swift */; };
 		868FFB6E281736070081D07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868FFB6D281736070081D07C /* Assets.xcassets */; };
@@ -112,6 +115,9 @@
 		867F36A3284BA59500F03C63 /* AddHousematesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHousematesScreen.swift; sourceTree = "<group>"; };
 		867F36A7284F9CE600F03C63 /* SearchLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationView.swift; sourceTree = "<group>"; };
 		867F36A9284F9DFB00F03C63 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		867F36AB28512E8400F03C63 /* ActivitySortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySortButton.swift; sourceTree = "<group>"; };
+		867F36AD28512EAF00F03C63 /* BarEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEventPreview.swift; sourceTree = "<group>"; };
+		867F36AF28512F0E00F03C63 /* HouseEventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseEventPreview.swift; sourceTree = "<group>"; };
 		868FFB66281736030081D07C /* Motiv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motiv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868FFB69281736030081D07C /* MotivApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivApp.swift; sourceTree = "<group>"; };
 		868FFB6B281736030081D07C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -239,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				865E7BF828334684008E1EAC /* ActivityScreen.swift */,
+				867F36AF28512F0E00F03C63 /* HouseEventPreview.swift */,
+				867F36AB28512E8400F03C63 /* ActivitySortButton.swift */,
+				867F36AD28512EAF00F03C63 /* BarEventPreview.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -511,6 +520,7 @@
 				8691FEB42842AF6A00B9F931 /* HouseViewModel.swift in Sources */,
 				86D22103281ADC3000AFC1A9 /* User.swift in Sources */,
 				86D937FC28221C86006EB0E4 /* IndexingViewModel.swift in Sources */,
+				867F36B028512F0F00F03C63 /* HouseEventPreview.swift in Sources */,
 				861FFFD728327D210015914C /* AppDelegate.swift in Sources */,
 				867F36A2284BA41B00F03C63 /* CreateHouseScreen.swift in Sources */,
 				865E7BFC2833DD72008E1EAC /* PlusCircle.swift in Sources */,
@@ -525,11 +535,13 @@
 				86D22105281ADCA700AFC1A9 /* School.swift in Sources */,
 				861FFFE32832D7E60015914C /* BottomCardView.swift in Sources */,
 				867F36AA284F9DFB00F03C63 /* LocationManager.swift in Sources */,
+				867F36AE28512EAF00F03C63 /* BarEventPreview.swift in Sources */,
 				86900E6828297BC1001442EA /* ImageSelectService.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
 				8604D4912849294E0063B11E /* Organization.swift in Sources */,
 				861FFFDE2832D7170015914C /* SchoolsScreen.swift in Sources */,
 				865E7BF928334684008E1EAC /* ActivityScreen.swift in Sources */,
+				867F36AC28512E8500F03C63 /* ActivitySortButton.swift in Sources */,
 				8604D495284929A10063B11E /* HouseEvent.swift in Sources */,
 				8604D48F284929440063B11E /* OrganizationEvent.swift in Sources */,
 				865E7C05283737E1008E1EAC /* FriendsScreen.swift in Sources */,

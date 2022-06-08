@@ -43,7 +43,12 @@ class OnboardingViewModel: ObservableObject {
             "username" : self.username,
             "school" : self.school,
             "program" : self.program,
-            "phoneNumber" : self.phoneNumber
+            "phoneNumber" : self.phoneNumber,
+            "profilePhoto" : "",
+            "dateCreated" : "",
+            "friends" : [],
+            "requests" : [],
+            "houseUID" : ""
         ])
         
         self.loading = false
