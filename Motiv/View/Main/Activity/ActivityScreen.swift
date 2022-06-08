@@ -114,25 +114,6 @@ struct ActivityScreen: View {
                     }
                 }
 
-                Spacer()
-
-                ZStack {
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(.white)
-                        .padding()
-                        .offset(y: -12)
-
-                    Button { () } label: { //TODO: Connect this button to create a new event
-                        Circle()
-                            .foregroundColor(Color("DarkBlue"))
-                            .frame(width: 50, height: 50)
-                    }
-
-                    Image(systemName: "plus")
-                        .foregroundColor(.white)
-                        .font(.system(size: 30))
-                }
             }
         }
         .navigationBarTitle("", displayMode: .inline)
