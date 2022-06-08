@@ -188,8 +188,11 @@
 		861FFFDC2832C7DE0015914C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DA443CA928456F9200D06126 /* BarEventPreview.swift */,
+				DAC19D7C2846A37500D6A19E /* HousePreview.swift */,
+				DAC19D7E2846A91800D6A19E /* HosteeView.swift */,
+				DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */,
 				865E7BFD2833E908008E1EAC /* MainRootView.swift */,
-				867F36A5284BA69E00F03C63 /* Subviews For Use */,
 				865E7BFA2833DD60008E1EAC /* Tab Views */,
 				865E7BE9283345E8008E1EAC /* Map */,
 				865E7BEF28334623008E1EAC /* User */,
@@ -311,17 +314,6 @@
 				8691FEB52842B0A600B9F931 /* HouseOptionSheetView.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		867F36A5284BA69E00F03C63 /* Subviews For Use */ = {
-			isa = PBXGroup;
-			children = (
-				DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */,
-				DAC19D7E2846A91800D6A19E /* HosteeView.swift */,
-				DAC19D7C2846A37500D6A19E /* HousePreview.swift */,
-				DA443CA928456F9200D06126 /* BarEventPreview.swift */,
-			);
-			path = "Subviews For Use";
 			sourceTree = "<group>";
 		};
 		867F36A6284F9CAB00F03C63 /* Search Location */ = {
