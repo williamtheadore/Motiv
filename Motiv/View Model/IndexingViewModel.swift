@@ -127,7 +127,10 @@ class IndexingViewModel: ObservableObject {
                     let hits: [Hit]? = try? result.extractHits()
                     
                     for hit in hits! {
+                        
+                        // TODO: Only append if user is not in a house
                         users.append(User(id: hit.id ?? "", name: hit.name ?? "", username: hit.username ?? "", program: hit.program ?? "", school: hit.school ?? "", friends: hit.friends ?? [], requests: hit.requests ?? [], houseUID: "", profilePhoto: hit.profilePhoto ?? "", inHouse: false))
+                        
                     }
                     
                     print("Found users: \(users)")

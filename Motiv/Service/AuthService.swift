@@ -83,20 +83,37 @@ class AuthService: ObservableObject {
             }
                          
             // MARK: Firestore upload
-            self.db.collection("users").document(uid).setData([
-                "uid" : uid,
-                "fullName" : self.fullName,
-                "username" : self.username,
-                "school" : self.school,
-                "program" : self.program,
-                "phoneNumber" : self.phoneNumber,
-                "houseID" : "",
-                "inHouse" : false
-            ])
-            
-            self.signedIn = true
-            print("Successfully signed in user")
-            self.loading = false
+            DispatchQueue.main.async {
+                self.db.collection("users").document(uid).getDocument { doc, err in
+                    
+                    // MARK: Determine if user exists in database already
+                    if let err = err {
+                        print("User already has an account")
+                        self.signedIn = true
+                        self.loading = false
+                        return
+                        
+                    } else {
+                        
+                       // MARK: User does not exist in database and requires account creation
+                        self.db.collection("users").document(uid).setData([
+                            "uid" : uid,
+                            "fullName" : self.fullName,
+                            "username" : self.username,
+                            "school" : self.school,
+                            "program" : self.program,
+                            "phoneNumber" : self.phoneNumber,
+                            "houseID" : "",
+                            "inHouse" : false
+                        ])
+                        
+                        self.signedIn = true
+                        print("Successfully signed in user")
+                        self.loading = false
+                        return
+                    }
+                }
+            }
         }
     }
     

@@ -17,14 +17,14 @@ struct HousePreview: View {
                         .resizable()
                         .scaledToFill()
 
-                    Button { Void() } label: { //TODO: Connect button
+                    Button { Void() } label: { // TODO: Connect button
                         Image(systemName: "chevron.down")
                             .padding()
                             .foregroundColor(.white)
                             .font(.system(size: 25, weight: .regular))
                     }
                 }
-                .frame(width: geo.size.width, height: geo.size.height * 0.25, alignment: .top)
+                .frame(width: geo.size.width - 10, height: geo.size.height * 0.25, alignment: .top)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
 
                 // House Info
@@ -73,7 +73,7 @@ struct HousePreview: View {
                 // TODO: Connect buttons
                 HStack(spacing: 15) {
                     Button("Visit") { Void() }
-                        .frame(width: geo.size.width * 0.45)
+                        .frame(width: geo.size.width * 0.4)
                         .padding(.vertical, 10)
                         .background(Color("Blue").opacity(0.6))
                         .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -81,7 +81,7 @@ struct HousePreview: View {
                         .foregroundColor(Color("LightBlue"))
 
                     Button("Follow") { Void() }
-                        .frame(width: geo.size.width * 0.45)
+                        .frame(width: geo.size.width * 0.4)
                         .padding(.vertical, 10)
                         .background(Color("Blue"))
                         .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -91,7 +91,7 @@ struct HousePreview: View {
             .padding(.bottom)
             .background(Color("CircleBorder").opacity(0.7))
             .foregroundColor(.white)
-            .frame(width: geo.size.width)
+            .frame(width: geo.size.width - 10)
             .clipShape(RoundedRectangle(cornerRadius: 20))
         }
     }
