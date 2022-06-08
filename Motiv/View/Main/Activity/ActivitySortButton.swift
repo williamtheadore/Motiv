@@ -39,6 +39,5 @@ struct ActivitySortButton: View {
 struct ActivitySortButton_Previews: PreviewProvider {
     static var previews: some View {
         ActivitySortButton(text: "Today", isSelected: .week, equals: .week)
-            .preferredColorScheme(.dark)
     }
 }

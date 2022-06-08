@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HouseEventPreview: View {
     // TODO: Retrieve interested users from db
-    @State private var interestedUsers = IndexingViewModel().dummyUsers
+    @State private var invitedUsers = IndexingViewModel().dummyUsers
 
     let geo: GeometryProxy
 
@@ -20,8 +20,11 @@ struct HouseEventPreview: View {
                 Image("queenscampus") // TODO: Get image from database
                     .resizable()
                     .scaledToFill()
+
+                //Event info
+                // TODO: Get event info from db
                 HStack {
-                    Text("22' Year Party") // TODO: Get event info from db
+                    Text("22' Year Party")
                         .font(.largeTitle.weight(.medium))
                         .padding()
 
@@ -50,7 +53,7 @@ struct HouseEventPreview: View {
             .frame(width: geo.size.width, height: geo.size.height * 0.25)
             .clipShape(RoundedRectangle(cornerRadius: 20))
 
-            // Event Info
+            // Event Info cont.
             // TODO: Populate from database
             HStack {
                 Text("Hosted by ")
@@ -70,7 +73,7 @@ struct HouseEventPreview: View {
             HStack {
                 Button { () } label: {
                     HStack(spacing: -15) {
-                        ForEach(interestedUsers.prefix(4), id: \.self) { user in
+                        ForEach(invitedUsers.prefix(4), id: \.self) { user in
                             AsyncImage(url: URL(string: user.profilePhoto)) { phase in
                                 if let image = phase.image {
                                     image.resizable()
@@ -85,8 +88,8 @@ struct HouseEventPreview: View {
                             .overlay(Circle().stroke(.black))
                         }
 
-                        if interestedUsers.count - 4 > 0 {
-                            Text("+\(interestedUsers.count - 4)")
+                        if invitedUsers.count - 4 > 0 {
+                            Text("+\(invitedUsers.count - 4)")
                                 .padding(5)
                                 .frame(width: 30, height: 30)
                                 .background(.white)

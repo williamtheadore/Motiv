@@ -70,6 +70,7 @@ struct ActivityScreen: View {
 
                 HStack {
                     // MARK: Today button
+
                     Spacer()
                     Button(action: {
                         self.selectedTab = .today
@@ -112,21 +113,22 @@ struct ActivityScreen: View {
                         }
                     }
                 }
-                
+
                 Spacer()
-                
+
                 ZStack {
-                    
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(.white)
                         .padding()
                         .offset(y: -12)
-                    
-                    Circle()
-                        .foregroundColor(Color("DarkBlue"))
-                        .frame(width: 50, height: 50)
-                    
+
+                    Button { () } label: { //TODO: Connect this button to create a new event
+                        Circle()
+                            .foregroundColor(Color("DarkBlue"))
+                            .frame(width: 50, height: 50)
+                    }
+
                     Image(systemName: "plus")
                         .foregroundColor(.white)
                         .font(.system(size: 30))
