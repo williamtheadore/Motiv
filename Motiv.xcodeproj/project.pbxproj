@@ -77,6 +77,7 @@
 		DAC19D7F2846A91800D6A19E /* HosteeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D7E2846A91800D6A19E /* HosteeView.swift */; };
 		DAC19D812846B39500D6A19E /* UserDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */; };
 		DACE47E72851708C005BF52A /* BarEventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE47E62851708C005BF52A /* BarEventPreview.swift */; };
+		DACE47E92852A110005BF52A /* HousemateListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE47E82852A110005BF52A /* HousemateListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		DAC19D7E2846A91800D6A19E /* HosteeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosteeView.swift; sourceTree = "<group>"; };
 		DAC19D802846B39500D6A19E /* UserDropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDropDownMenu.swift; sourceTree = "<group>"; };
 		DACE47E62851708C005BF52A /* BarEventPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarEventPreview.swift; sourceTree = "<group>"; };
+		DACE47E82852A110005BF52A /* HousemateListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousemateListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 			children = (
 				867F36A0284BA40100F03C63 /* Onboarding */,
 				865E7BF42833466A008E1EAC /* HouseScreen.swift */,
+				DACE47E82852A110005BF52A /* HousemateListItem.swift */,
 			);
 			path = House;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				DAC19D7F2846A91800D6A19E /* HosteeView.swift in Sources */,
 				86607C8D282EC05000CAD8F5 /* NameInputView.swift in Sources */,
 				865E7BF728334678008E1EAC /* CreatePreview.swift in Sources */,
+				DACE47E92852A110005BF52A /* HousemateListItem.swift in Sources */,
 				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
 				DAC19D7D2846A37500D6A19E /* HousePreview.swift in Sources */,
 				868FFB6A281736030081D07C /* MotivApp.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Decodable, Hashable {
+struct User: Decodable, Hashable, Identifiable {
     
 
     
