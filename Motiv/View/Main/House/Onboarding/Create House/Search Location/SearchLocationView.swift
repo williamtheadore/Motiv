@@ -11,6 +11,7 @@ import MapKit
 struct SearchLocationView: View {
     
     @StateObject var locationManager: LocationManager = .init()
+    @EnvironmentObject var houseVM: HouseViewModel
     
     // MARK: Navigation Tag to push map view
     @State var navigationTag: String?
@@ -114,6 +115,7 @@ struct SearchLocationView: View {
         .background {
             NavigationLink(tag: "MAPVIEW", selection: $navigationTag) {
                 MapViewSelection()
+                    .environmentObject(houseVM)
                     .environmentObject(locationManager)
                     .navigationBarHidden(true)
             } label: { }
@@ -132,6 +134,7 @@ struct SearchLocationView_Previews: PreviewProvider {
 struct MapViewSelection: View {
     
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var houseVM: HouseViewModel
     
     @Environment(\.dismiss) var dismiss
     
@@ -174,6 +177,7 @@ struct MapViewSelection: View {
                     
                     NavigationLink {
                         AddHousematesScreen()
+                            .environmentObject(houseVM)
                     } label: {
                         Text("Confirm Location")
                             .fontWeight(.semibold)
@@ -200,12 +204,12 @@ struct MapViewSelection: View {
                 .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
-        .onDisappear {
-            locationManager.pickedLocation = nil
-            locationManager.pickedPlaceMark = nil
-            
-            locationManager.mapView.removeAnnotations(locationManager.mapView.annotations)
-        }
+//        .onDisappear {
+//            locationManager.pickedLocation = nil
+//            locationManager.pickedPlaceMark = nil
+//
+//            locationManager.mapView.removeAnnotations(locationManager.mapView.annotations)
+//        }
     }
 }
 

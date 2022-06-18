@@ -12,6 +12,16 @@
 				<string>com.googleusercontent.apps.122300517309-s6llq0f3ec9dsse5jku53jc88ooj1ekq</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Bundle ID</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>motivappinc.MotivEventPlanner</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

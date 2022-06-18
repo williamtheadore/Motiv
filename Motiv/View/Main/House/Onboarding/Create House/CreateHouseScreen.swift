@@ -44,6 +44,7 @@ struct CreateHouseScreen: View {
             
             NavigationLink(destination: {
                 SearchLocationView()
+                    .environmentObject(houseVM)
             }, label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)

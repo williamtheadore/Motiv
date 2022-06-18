@@ -25,6 +25,7 @@ class RootViewModel: ObservableObject {
     // MARK: Signed In User
     @Published var signedInUser = User(id: "", name: "", username: "", program: "", school: "", friends: [], requests: [], houseUID: "", profilePhoto: "", inHouse: false)
     @Published var uid: String = ""
+    @Published var userInitials: String = ""
     
     
     // MARK: Firebase Variables
@@ -119,5 +120,30 @@ class RootViewModel: ObservableObject {
             self.signedIn = false
         }
         
+    }
+    
+    // MARK: Profile Photo initials
+    func findUserInitials(user: User) -> String {
+        
+        // USED FOR DETERMINING QUANTITY OF INITIALS IN FULL NAME
+        let fullNameArr = user.name.components(separatedBy: " ")
+        print("Amount of words in full name: \(fullNameArr.count)")
+        // ONE INTITIAL
+        if fullNameArr.count == 1 {
+                        
+            let firstName = fullNameArr[0]
+            print("Single intital name: \(fullNameArr)")
+            return String(firstName[firstName.startIndex])
+            
+        } else { // TWO INITIALS
+                        
+            let firstName: String = fullNameArr[0]
+            let lastName: String = fullNameArr[1]
+            
+            let firstInitial = String(firstName[firstName.startIndex])
+            let lastIntitial = String(lastName[lastName.startIndex])
+            print("More than one intial: \(fullNameArr)")
+            return String(firstInitial + lastIntitial)
+        }
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import AlgoliaSearchClient
+import Combine
 
 
 class IndexingViewModel: ObservableObject {
@@ -16,6 +17,10 @@ class IndexingViewModel: ObservableObject {
     // MARK: Algolia Services
     private let client: SearchClient
     private let userIndex: Index
+    
+    @Published var searchText: String = ""
+    @Published var users: [User] = [User(id: "", name: "name", username: "username", program: "program", school: "school", friends: [], requests: [], houseUID: "", profilePhoto: "", inHouse: false)]
+    var cancellable: AnyCancellable?
     
     // MARK: Firebase Services
     private let db = Firestore.firestore()
@@ -34,6 +39,34 @@ class IndexingViewModel: ObservableObject {
         let id: String?
         
     }
+    
+    init() {
+        
+        // MARK: Initializes Algolia Client
+        self.client = SearchClient(appID: "NAW4Z6IS9L", apiKey: "35451fd87ebb6dbbf8bf2e74633a7521")
+        self.userIndex = client.index(withName: "w-little_motivapp_users")
+        
+        // MARK: Search textfield Watching
+        cancellable = $searchText
+            .debounce(for: .seconds(0.25), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .sink(receiveValue: { value in
+                if value != "" {
+                    self.users = []
+                    self.searchUsers(value) { userList in
+                        for user in userList {
+                            if !self.users.contains(user) {
+                                self.users.append(user)
+                            }
+                        }
+                    }
+                    print("setting users array: \(self.users)")
+                } else {
+                    self.users = []
+                }
+            })
+    }
+    
     
 
     // MARK: Fetches Algolia App ID from database
@@ -84,16 +117,6 @@ class IndexingViewModel: ObservableObject {
         
         return apiKey
     }
-      
-        
-    
-    
-    // MARK: Initializes Algolia Client and Index
-    init() {
-        self.client = SearchClient(appID: "NAW4Z6IS9L", apiKey: "35451fd87ebb6dbbf8bf2e74633a7521")
-        self.userIndex = client.index(withName: "w-little_motivapp_users")
-        
-    }
     
     
     // MARK: Hard Coded Dummy Users for Testing Purposes
@@ -110,8 +133,7 @@ class IndexingViewModel: ObservableObject {
         User(id: UUID().uuidString, name: "John B", username: "johnb", program: "Engineering", school: "Queen's University", friends: [], requests: [], houseUID: "", profilePhoto: "https://firebasestorage.googleapis.com/v0/b/motiv-349217.appspot.com/o/profile_pic_10.jpeg?alt=media&token=bd059d18-f1d7-4d9e-8018-4ff456974cbd", inHouse: false)
     ]
     
-    // MARK: Searches users stored in Algolia User Index
-    func searchUsers(_ query: String) -> [User] {
+    func searchUsers(_ query: String, _ completion: @escaping ([User]) -> Void) {
         
         var users: [User] = []
         
@@ -132,17 +154,47 @@ class IndexingViewModel: ObservableObject {
                         // TODO: Only append if user is not in a house
                         users.append(User(id: hit.id ?? "", name: hit.name ?? "", username: hit.username ?? "", program: hit.program ?? "", school: hit.school ?? "", friends: hit.friends ?? [], requests: hit.requests ?? [], houseUID: "", profilePhoto: hit.profilePhoto ?? "", inHouse: false))
                         
+                        print("Returning: \(users)")
+                        completion(users)
                     }
-                    
-                    print("Found users: \(users)")
                 }
             }
         }
-        
-        return users
-
     }
     
+    // MARK: Searches users stored in Algolia User Index
+//    func searchUsers(_ query: String) -> [User] {
+//
+//        var users: [User] = []
+//
+//
+//        var query = Query(query)
+//        query.hitsPerPage = 30
+//
+//        DispatchQueue.main.async {
+//            self.userIndex.search(query: query) { serverResponse in
+//                switch serverResponse {
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                case .success(let result):
+//                    let hits: [Hit]? = try? result.extractHits()
+//
+//                    for hit in hits! {
+//
+//                        // TODO: Only append if user is not in a house
+//                        users.append(User(id: hit.id ?? "", name: hit.name ?? "", username: hit.username ?? "", program: hit.program ?? "", school: hit.school ?? "", friends: hit.friends ?? [], requests: hit.requests ?? [], houseUID: "", profilePhoto: hit.profilePhoto ?? "", inHouse: false))
+//
+//                        print("Returning: \(users)")
+//                    }
+//                }
+//            }
+//        }
+//
+//        print("Returning: \(users)")
+//        return users
+//
+//    }
+//
     // MARK: DO NOT CALL MORE THAN ONCE - FLOODS DATABASE
     func uploadDummyUsers() {
         

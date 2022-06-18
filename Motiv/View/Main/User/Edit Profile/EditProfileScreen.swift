@@ -9,54 +9,77 @@ import SwiftUI
 
 struct EditProfileScreen: View {
     
-//    @EnvironmentObject var rootVM: RootViewModel
+    @EnvironmentObject var rootVM: RootViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack(alignment: .center) {
-          
-            // MARK: Header View
-            HStack(spacing: 80) {
+        ScrollView(.vertical) {
+            VStack(alignment: .center) {
                 
-                // Cancel Button
-                Button {
+                // MARK: Header View
+                HStack(spacing: 80) {
                     
-                } label: {
-                    Text("Cancel")
+                    // Cancel Button
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Cancel")
+                            .foregroundColor(.white)
+                            .frame(minWidth: 55)
+                    }
+                    
+                    // Edit Profile Header
+                    Text("Edit Profile")
                         .foregroundColor(.white)
-                        .frame(minWidth: 55)
+                        .fontWeight(.semibold)
+                        .frame(minWidth: 60)
+                    
+                    // Save button only allowed when a field has changed
+                    Button {
+                        
+                    } label: {
+                        Text("Save")
+                            .foregroundColor(.gray)
+                            .frame(minWidth: 40)
+                    }
+                    
                 }
+                .padding()
+                .frame(alignment: .top)
                 
-                // Edit Profile Header
-                Text("Edit Profile")
-                    .foregroundColor(.white)
-                    .fontWeight(.semibold)
-                    .frame(minWidth: 60)
+                // Profile Image
+                Image("westerncover")
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
+                    .frame(width: 100, height: 100)
+                    .padding(.vertical, 10)
                 
-                // Save button only allowed when a field has changed
                 Button {
                     
                 } label: {
-                    Text("Save")
-                        .foregroundColor(.gray)
-                        .frame(minWidth: 40)
+                    Text("Edit Profile Photo")
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.caption)
                 }
-
+                
+                Spacer()
+                
+                // Sign out button
+                Button {
+                    rootVM.signout()
+                } label: {
+                    Text("Sign out")
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                
             }
-            .padding()
-            .frame(alignment: .top)
-            
-            Image("westerncover")
-                .resizable()
-                .scaledToFill()
-                .clipShape(Circle())
-                .frame(width: 100, height: 100)
-                .padding()
-            
-            Spacer()
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BG"))
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(true)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BG"))
     }
 }
 

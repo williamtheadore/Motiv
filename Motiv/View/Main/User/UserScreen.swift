@@ -30,19 +30,23 @@ struct UserScreen: View {
                 HStack(spacing: 75) {
                     
                     // MARK: Three Dots
-                    HStack(spacing: 4) {
-                        Circle()
-                            .frame(width: 4, height: 4)
-                            .foregroundColor(.white)
-                        Circle()
-                            .frame(width: 4, height: 4)
-                            .foregroundColor(.white)
-                        Circle()
-                            .frame(width: 4, height: 4)
-                            .foregroundColor(.white)
+                    NavigationLink {
+                        EditProfileScreen()
+                    } label: {
+                        HStack(spacing: 4) {
+                            Circle()
+                                .frame(width: 4, height: 4)
+                                .foregroundColor(.white)
+                            Circle()
+                                .frame(width: 4, height: 4)
+                                .foregroundColor(.white)
+                            Circle()
+                                .frame(width: 4, height: 4)
+                                .foregroundColor(.white)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 20)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 20)
                     
                     // MARK: Username
                     Text(rootVM.signedInUser.username)
