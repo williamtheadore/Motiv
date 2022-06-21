@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import AlgoliaSearchClient
 import Combine
-
+import Contacts
 
 class IndexingViewModel: ObservableObject {
     
@@ -19,7 +19,8 @@ class IndexingViewModel: ObservableObject {
     private let userIndex: Index
     
     @Published var searchText: String = ""
-    @Published var users: [User] = [User(id: "", name: "name", username: "username", program: "program", school: "school", friends: [], requests: [], houseUID: "", profilePhoto: "", inHouse: false)]
+    @Published var users: [User] = []
+    @Published var searchedUsers: [UserContact] = []
     var cancellable: AnyCancellable?
     
     // MARK: Firebase Services
@@ -52,15 +53,38 @@ class IndexingViewModel: ObservableObject {
             .removeDuplicates()
             .sink(receiveValue: { value in
                 if value != "" {
+                    
+                    // Reset values
                     self.users = []
+                    self.searchedUsers = []
+                    
+                    // Search Contacts matching value predicate
+                    let keysToFetch = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+                    let store = CNContactStore()
+                    do {
+                        let predicate = CNContact.predicateForContacts(matchingName: value)
+                        let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keysToFetch)
+
+                        for contact in contacts {
+                            if !self.searchedUsers.contains(UserContact(id: UUID().uuidString, name: String("\(contact.givenName) \(contact.familyName ?? "")"), phoneNo: contact.phoneNumbers.first?.value.stringValue ?? "", descriptionOrName: "FROM YOUR CONTACTS", contact: true)) {
+                                self.searchedUsers.append(UserContact(id: UUID().uuidString, name: String("\(contact.givenName) \(contact.familyName ?? "")"), phoneNo: contact.phoneNumbers.first?.value.stringValue ?? "", descriptionOrName: "FROM YOUR CONTACTS", contact: true))
+                            }
+                            
+                        }
+                    } catch {
+                        print("Failed to fetch contact, error: \(error)")
+                    }
+
+                    
+                    // Search Database Users using Algolia
                     self.searchUsers(value) { userList in
                         for user in userList {
-                            if !self.users.contains(user) {
-                                self.users.append(user)
+                            if !self.searchedUsers.contains(UserContact(id: user.id, name: user.name, phoneNo: "", descriptionOrName: user.username, contact: false)) {
+                                self.searchedUsers.append(UserContact(id: user.id, name: user.name, phoneNo: "", descriptionOrName: user.username, contact: false))
                             }
                         }
                     }
-                    print("setting users array: \(self.users)")
+                    print("setting searched users array: \(self.searchedUsers)")
                 } else {
                     self.users = []
                 }
@@ -154,7 +178,6 @@ class IndexingViewModel: ObservableObject {
                         // TODO: Only append if user is not in a house
                         users.append(User(id: hit.id ?? "", name: hit.name ?? "", username: hit.username ?? "", program: hit.program ?? "", school: hit.school ?? "", friends: hit.friends ?? [], requests: hit.requests ?? [], houseUID: "", profilePhoto: hit.profilePhoto ?? "", inHouse: false))
                         
-                        print("Returning: \(users)")
                         completion(users)
                     }
                 }

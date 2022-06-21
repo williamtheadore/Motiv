@@ -11,8 +11,64 @@ struct AddHousematesScreen: View {
     
     @State var searchText: String = ""
     @StateObject var indexVM = IndexingViewModel()
+    @EnvironmentObject var houseVM: HouseViewModel
+    @FocusState private var keyboardActive: Bool
+
+    @State private var invitedUsers: [UserContact] = []
+    @State private var phNoList: [String] = []
+    @State private var UIDList: [String] = []
     
-    @State private var invitedUsers: [User] = []
+    // MARK: Profile Photo initials
+    func findUserInitials(name: String) -> String {
+        
+        // USED FOR DETERMINING QUANTITY OF INITIALS IN FULL NAME
+        let fullNameArr = name.components(separatedBy: " ")
+        print("Amount of words in full name: \(fullNameArr.count)")
+        // ONE INTITIAL
+        if fullNameArr.count == 1 {
+                        
+            let firstName = fullNameArr[0]
+            print("Single intital name: \(fullNameArr)")
+            
+            if firstName.count >= 1 {
+                return String(firstName[firstName.startIndex])
+            } else {
+                return ""
+            }
+            
+        } else { // TWO INITIALS
+                    
+            let firstName: String = fullNameArr[0]
+            let lastName: String = fullNameArr[1]
+            
+            if firstName.count >= 1 && lastName.count >= 1 {
+                let firstInitial = String(firstName[firstName.startIndex])
+                let lastIntitial = String(lastName[lastName.startIndex])
+                print("More than one intial: \(fullNameArr)")
+                return String(firstInitial + lastIntitial)
+            } else {
+                print("Single intital name: \(fullNameArr)")
+                return String(firstName[firstName.startIndex])
+            }
+        }
+    }
+    
+    func sendInvites() {
+        
+        for user in invitedUsers {
+            if user.contact {
+                self.phNoList.append(user.phoneNo ?? "")
+            } else {
+                self.UIDList.append(user.id)
+            }
+        }
+        
+        self.houseVM.addHousemates(phNoList: self.phNoList, UIDList: self.UIDList)
+    }
+    
+    init() {
+        self.keyboardActive = false
+    }
     
     var body: some View {
         VStack(alignment: .center) {
@@ -25,21 +81,22 @@ struct AddHousematesScreen: View {
                     .resizable()
                     .foregroundColor(.white)
                     .frame(width: 10, height: 20)
-                    .padding()
+                    .padding(.horizontal)
                 
                 Spacer()
 
-//                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text("Add Housemates")
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
+                    .offset(x: -20)
+                
                 Spacer()
 
                 
             }
-//            .frame(maxHeight: .infinity, alignment: .top)
-            .padding(.top, 30)
+            .padding(.top, 25)
             
+            // MARK: Search Bar
             ZStack {
                 Rectangle()
                     .foregroundColor(Color("SearchBar"))
@@ -47,6 +104,7 @@ struct AddHousematesScreen: View {
                     Image(systemName: "magnifyingglass")
                     TextField("Search ..", text: $indexVM.searchText)
                         .foregroundColor(.white)
+                        .focused($keyboardActive)
                 }
                 .foregroundColor(.gray)
                 .padding(.leading, 13)
@@ -54,33 +112,45 @@ struct AddHousematesScreen: View {
             }
             .frame(height: 50)
             .cornerRadius(15)
-            .padding(.top)
+            .padding(.top, 10)
             .padding(.horizontal)
             
+            // MARK: Users List
             List {
                 if self.indexVM.searchText != "" {
-                    ForEach(self.indexVM.users, id: \.self) { user in
+                    ForEach(self.indexVM.searchedUsers, id: \.self) { user in
+                        
+                        let initials: String? = findUserInitials(name: user.name)
+                        
                         HStack {
                             ZStack {
                                 Circle()
-                                    .frame(width: 31, height: 31)
+                                    .frame(width: 35, height: 35)
                                     .foregroundColor(.gray)
                                 Circle()
-                                    .frame(width: 30, height: 30)
+                                    .frame(width: 34, height: 34)
                                     .foregroundColor(Color("SearchBar"))
-                                Text("WL")
+                                Text(initials ?? "?")
                                     .font(.footnote)
                             }
                             
                             VStack(alignment: .leading) {
                                 Text(user.name)
                                     .foregroundColor(.white)
-                                    .font(.footnote)
+//                                    .font(.footnote)
                                 
-                                Text("@\(user.username)")
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
-
+                                
+                                if user.descriptionOrName == "FROM YOUR CONTACTS" {
+                                    Text("CONTACT")
+                                        .foregroundColor(Color("LightBlue"))
+                                        .fontWeight(.semibold)
+                                        .font(.footnote)
+                                } else {
+                                    Text("@\(user.descriptionOrName)")
+                                        .foregroundColor(.gray)
+                                        .font(.footnote)
+                                }
+                                
                             }
                             
                             Spacer()
@@ -126,6 +196,9 @@ struct AddHousematesScreen: View {
                     }
                 } else {
                     ForEach(self.invitedUsers, id: \.self) { user in
+                        
+                        let initials: String? = findUserInitials(name: user.name)
+
                         HStack {
                             ZStack {
                                 Circle()
@@ -134,18 +207,25 @@ struct AddHousematesScreen: View {
                                 Circle()
                                     .frame(width: 30, height: 30)
                                     .foregroundColor(Color("SearchBar"))
-                                Text("WL")
+                                Text(initials ?? "")
                                     .font(.footnote)
                             }
                             
                             VStack(alignment: .leading) {
                                 Text(user.name)
                                     .foregroundColor(.white)
-                                    .font(.footnote)
+//                                    .font(.footnote)
                                 
-                                Text("@\(user.username)")
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
+                                if user.descriptionOrName == "FROM YOUR CONTACTS" {
+                                    Text("CONTACT")
+                                        .foregroundColor(Color("LightBlue"))
+                                        .fontWeight(.semibold)
+                                        .font(.footnote)
+                                } else {
+                                    Text("@\(user.descriptionOrName)")
+                                        .foregroundColor(.gray)
+                                        .font(.footnote)
+                                }
 
                             }
                             
@@ -196,28 +276,35 @@ struct AddHousematesScreen: View {
             
             Spacer()
             
-            NavigationLink(destination: {
-                Text("Add House Cover Photo")
-            }, label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 30)
-                        .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
-                        .foregroundColor(Color("LightBlue"))
-                    Text("Continue")
-                        .foregroundColor(.black)
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    Image(systemName: "chevron.right")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 10)
-                        .foregroundColor(.black)
-                        .padding(.trailing, 40)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+            // MARK: Send Invites Button
+            if !keyboardActive {
+                
+                Button {
+                    self.sendInvites()
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30)
+                            .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
+                            .foregroundColor(Color("LightBlue"))
+                        Text("Continue")
+                            .foregroundColor(.black)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                        .padding()
                 }
-                .frame(maxHeight: .infinity, alignment: .bottom)
-            })
-                .padding()
+
+            } else {
+                
+            }
+            
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

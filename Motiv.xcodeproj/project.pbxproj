@@ -70,6 +70,7 @@
 		86900E6828297BC1001442EA /* ImageSelectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86900E6728297BC1001442EA /* ImageSelectService.swift */; };
 		8691FEB42842AF6A00B9F931 /* HouseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691FEB32842AF6A00B9F931 /* HouseViewModel.swift */; };
 		8691FEB62842B0A600B9F931 /* HouseOptionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691FEB52842B0A600B9F931 /* HouseOptionSheetView.swift */; };
+		8695BFDC2860193C007B9788 /* UserContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695BFDB2860193B007B9788 /* UserContact.swift */; };
 		86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22100281A23A700AFC1A9 /* RootViewModel.swift */; };
 		86D22103281ADC3000AFC1A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22102281ADC3000AFC1A9 /* User.swift */; };
 		86D22105281ADCA700AFC1A9 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D22104281ADCA700AFC1A9 /* School.swift */; };
@@ -127,6 +128,7 @@
 		86900E6728297BC1001442EA /* ImageSelectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectService.swift; sourceTree = "<group>"; };
 		8691FEB32842AF6A00B9F931 /* HouseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewModel.swift; sourceTree = "<group>"; };
 		8691FEB52842B0A600B9F931 /* HouseOptionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseOptionSheetView.swift; sourceTree = "<group>"; };
+		8695BFDB2860193B007B9788 /* UserContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContact.swift; sourceTree = "<group>"; };
 		86D22100281A23A700AFC1A9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		86D22102281ADC3000AFC1A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86D22104281ADCA700AFC1A9 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				86D22102281ADC3000AFC1A9 /* User.swift */,
+				8695BFDB2860193B007B9788 /* UserContact.swift */,
 				865E7BFF2833ED05008E1EAC /* Tab.swift */,
 				8604D494284929A10063B11E /* HouseEvent.swift */,
 				86D22104281ADCA700AFC1A9 /* School.swift */,
@@ -556,6 +559,7 @@
 				DAC19D812846B39500D6A19E /* UserDropDownMenu.swift in Sources */,
 				DAC19D7F2846A91800D6A19E /* HosteeView.swift in Sources */,
 				86607C8D282EC05000CAD8F5 /* NameInputView.swift in Sources */,
+				8695BFDC2860193C007B9788 /* UserContact.swift in Sources */,
 				865E7BF728334678008E1EAC /* CreatePreview.swift in Sources */,
 				86D22101281A23A700AFC1A9 /* RootViewModel.swift in Sources */,
 				DAC19D7D2846A37500D6A19E /* HousePreview.swift in Sources */,
@@ -700,6 +704,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Motiv/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Find friends from contacts";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -734,6 +739,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Motiv/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Find friends from contacts";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
