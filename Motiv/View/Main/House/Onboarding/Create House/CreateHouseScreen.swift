@@ -42,10 +42,7 @@ struct CreateHouseScreen: View {
             
             Spacer()
             
-            NavigationLink(destination: {
-                SearchLocationView()
-                    .environmentObject(houseVM)
-            }, label: {
+            if houseVM.createHouseName.count == 0 {
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)
                         .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
@@ -62,10 +59,33 @@ struct CreateHouseScreen: View {
                         .padding(.trailing, 40)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                .frame(maxHeight: .infinity, alignment: .bottom)
-            })
-                .padding()
+                .opacity(0.5)
+            } else {
+                NavigationLink(destination: {
+                    SearchLocationView()
+                        .environmentObject(houseVM)
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30)
+                            .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
+                            .foregroundColor(Color("LightBlue"))
+                        Text("Continue")
+                            .foregroundColor(.black)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                })
+                    .padding()
 
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

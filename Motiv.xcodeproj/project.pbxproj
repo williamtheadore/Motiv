@@ -35,6 +35,7 @@
 		86607C9128315B3900CAD8F5 /* ProgramInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86607C9028315B3800CAD8F5 /* ProgramInputView.swift */; };
 		86607C93283187EE00CAD8F5 /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86607C92283187EC00CAD8F5 /* PhoneInputView.swift */; };
 		86607C962831927A00CAD8F5 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 86607C952831927A00CAD8F5 /* iPhoneNumberField */; };
+		86614626286272710034F817 /* HouseCoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86614625286272710034F817 /* HouseCoverPhoto.swift */; };
 		8671CE63281782A00068DE4A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE62281782A00068DE4A /* FirebaseAnalytics */; };
 		8671CE65281782A00068DE4A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE64281782A00068DE4A /* FirebaseAnalyticsSwift-Beta */; };
 		8671CE67281782A00068DE4A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8671CE66281782A00068DE4A /* FirebaseAuth */; };
@@ -110,6 +111,7 @@
 		86607C8E2831561900CAD8F5 /* UsernameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameInputView.swift; sourceTree = "<group>"; };
 		86607C9028315B3800CAD8F5 /* ProgramInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInputView.swift; sourceTree = "<group>"; };
 		86607C92283187EC00CAD8F5 /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
+		86614625286272710034F817 /* HouseCoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCoverPhoto.swift; sourceTree = "<group>"; };
 		8671CE97281859FD0068DE4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		867CC4352831EDD700F31CC6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		867F36A1284BA41B00F03C63 /* CreateHouseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHouseScreen.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				867F36A6284F9CAB00F03C63 /* Search Location */,
 				867F36A1284BA41B00F03C63 /* CreateHouseScreen.swift */,
 				867F36A3284BA59500F03C63 /* AddHousematesScreen.swift */,
+				86614625286272710034F817 /* HouseCoverPhoto.swift */,
 			);
 			path = "Create House";
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				86900E6828297BC1001442EA /* ImageSelectService.swift in Sources */,
 				868FFB86281760650081D07C /* OnboardingViewModel.swift in Sources */,
 				8604D4912849294E0063B11E /* Organization.swift in Sources */,
+				86614626286272710034F817 /* HouseCoverPhoto.swift in Sources */,
 				861FFFDE2832D7170015914C /* SchoolsScreen.swift in Sources */,
 				865E7BF928334684008E1EAC /* ActivityScreen.swift in Sources */,
 				867F36AC28512E8500F03C63 /* ActivitySortButton.swift in Sources */,

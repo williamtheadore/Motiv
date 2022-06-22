@@ -47,11 +47,7 @@ struct NameInputView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: {
-                    UsernameInputView()
-                        .environmentObject(onboardingVM)
-                        .environmentObject(authService)
-                }, label: {
+                if authService.fullName.count == 0 {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
@@ -69,9 +65,32 @@ struct NameInputView: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     .frame(maxHeight: .infinity, alignment: .bottom)
-                })
-                    .padding()
-
+                } else {
+                    NavigationLink(destination: {
+                        UsernameInputView()
+                            .environmentObject(onboardingVM)
+                            .environmentObject(authService)
+                    }, label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 30)
+                                .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
+                                .foregroundColor(Color("LightBlue"))
+                            Text("Continue")
+                                .foregroundColor(.black)
+                                .fontWeight(.semibold)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            Image(systemName: "chevron.right")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 10)
+                                .foregroundColor(.black)
+                                .padding(.trailing, 40)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                    })
+                        .padding()
+                }
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

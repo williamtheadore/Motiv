@@ -279,9 +279,10 @@ struct AddHousematesScreen: View {
             // MARK: Send Invites Button
             if !keyboardActive {
                 
-                Button {
-                    self.sendInvites()
-                } label: {
+                NavigationLink(destination: {
+                    HouseCoverPhoto()
+                        .environmentObject(houseVM)
+                }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: UIScreen.main.bounds.maxX - 50, height: 60)
@@ -298,8 +299,10 @@ struct AddHousematesScreen: View {
                             .padding(.trailing, 40)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
-                        .padding()
-                }
+                    .onTapGesture {
+                        self.sendInvites()
+                    }
+                })
 
             } else {
                 
